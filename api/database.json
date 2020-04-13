@@ -1,0 +1,53 @@
+{
+    "users": [
+        {
+            "id": 1,
+            "username": "",
+            "email": "",
+            "password": ""
+        }
+    ],
+    "articles": [
+        {
+            "id": 1,
+            "userId": "",
+            "url": "",
+            "title": "",
+            "synopsis": "",
+            "timestamp": ""
+        }
+    ],
+    "events": [
+        {
+            "id": 1,
+            "userId": "",
+            "event": "",
+            "date": "",
+            "location": ""
+        }
+    ],
+    "tasks": [
+        {
+            "id": 1,
+            "task": "",
+            "userId": "",
+            "complete": "",
+            "dateToComplete": ""
+        }
+    ],
+    "friends": [
+        {
+            "id": 1,
+            "userId": "",
+            "friendUserId": ""
+        }
+    ],
+    "messages": [
+        {
+            "id": 1,
+            "userId": "",
+            "messageText": "",
+            "timestamp": ""
+        }
+    ]
+}
