@@ -28,7 +28,7 @@ export const saveEvent = event => {
         body: JSON.stringify(event)
     })
     .then(getEvents)
-    .then(dispatchStateChangeEvent)
+    .then(dispatchEventStateChangeEvent)
 }
 
 export const deleteEvent = id => {
