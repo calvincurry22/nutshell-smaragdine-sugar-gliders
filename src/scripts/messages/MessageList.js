@@ -15,7 +15,7 @@ export const MessageList = () => {
     messagesContainerTarget.innerHTML = `
     <header class="messagesContainer__Header">Chat</header>
     <section class="messagesContainer__Messages"></section>
-    <input type="text" id="messageText" name="message" placeholder="Enter message here">
+    <input type="text" id="messageText" name="message" onfocus="this.value=''" placeholder="Enter message here">
     ${NewMessageButton()}
     `
 }

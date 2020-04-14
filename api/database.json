@@ -56,6 +56,12 @@
       "messageText": "jd was here",
       "timestamp": 1586884859927,
       "id": 8
+    },
+    {
+      "userId": 1,
+      "messageText": "Nothing",
+      "timestamp": 1586887352839,
+      "id": 9
     }
   ],
   "events": [
