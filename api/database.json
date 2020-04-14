@@ -2,29 +2,95 @@
   "users": [
     {
       "id": 1,
-      "username": "",
-      "email": "",
-      "password": ""
+      "username": "jondurr",
+      "email": "durrjp1@gmail.com",
+      "password": "1234"
     }
   ],
   "articles": [],
-  "events": [
+  "messages": [
     {
       "id": 1,
       "userId": 1,
-      "event": "NSS graduation",
-      "date": "June",
-      "location": "NSS"
+      "messageText": "hello",
+      "timestamp": 1586881372
     },
     {
-      "id": 2,
       "userId": 1,
-      "event": "NSS graduation",
-      "date": "June",
-      "location": "NSS"
+      "messageText": "fghfg",
+      "timestamp": 1586883665909,
+      "id": 2
     },
     {
-      "id": 3,
+      "userId": 1,
+      "messageText": "jhjhg",
+      "timestamp": 1586883687930,
+      "id": 3
+    },
+    {
+      "userId": 1,
+      "messageText": "gfghfg",
+      "timestamp": 1586883783442,
+      "id": 4
+    },
+    {
+      "userId": 1,
+      "messageText": "hello",
+      "timestamp": 1586883815092,
+      "id": 5
+    },
+    {
+      "userId": 1,
+      "messageText": "Hi peeps!",
+      "timestamp": 1586884391644,
+      "id": 6
+    },
+    {
+      "userId": 1,
+      "messageText": "hi y'all",
+      "timestamp": 1586884485838,
+      "id": 7
+    },
+    {
+      "userId": 1,
+      "messageText": "jd was here",
+      "timestamp": 1586884859927,
+      "id": 8
+    },
+    {
+      "userId": 1,
+      "messageText": "Nothing",
+      "timestamp": 1586887352839,
+      "id": 9
+    },
+    {
+      "userId": 1,
+      "messageText": "xzczx",
+      "timestamp": 1586887504225,
+      "id": 10
+    },
+    {
+      "userId": 1,
+      "messageText": "zxc",
+      "timestamp": 1586887513415,
+      "id": 11
+    },
+    {
+      "userId": 1,
+      "messageText": "dsd",
+      "timestamp": 1586888971589,
+      "id": 12
+    },
+    {
+      "userId": 1,
+      "messageText": "sdfsd",
+      "timestamp": 1586888989019,
+      "id": 13
+    }
+  ],
+  "events": [
+    {
+      "id": 1,
       "userId": 1,
       "event": "NSS graduation",
       "date": "June",
@@ -36,16 +102,8 @@
       "event": "NSS graduation",
       "date": "June",
       "location": "NSS"
-    },
-    {
-      "userId": 1,
-      "event": "Test",
-      "date": "2020-04-14",
-      "location": "Nashville",
-      "id": 5
     }
   ],
   "tasks": [],
-  "friends": [],
-  "messages": []
+  "friends": []
 }
