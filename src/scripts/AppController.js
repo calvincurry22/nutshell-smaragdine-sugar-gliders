@@ -10,10 +10,10 @@ export const dispatchStateChangeEvent = () => {
 
 let pageState = "login"
 
-eventHub.addEventListener("loginButtonClicked", event => {
-    pageState = "dashboard"
-    pageStateChanged()
-})
+// eventHub.addEventListener("loginButtonClicked", event => {
+//     pageState = "dashboard"
+//     pageStateChanged()
+// })
 
 // whenever page state changed hide all components first with this function
 const hideAllComponents = () => {

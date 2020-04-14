@@ -5,13 +5,14 @@ import { NewMessageButton } from "./NewMessageButton.js"
 import { Message } from "./Message.js"
 
 const eventHub = document.querySelector(".container")
+const messagesContainerTarget = document.querySelector(".messagesContainer")
 
-eventHub.addEventListener("componentStateChanged", {
+eventHub.addEventListener("componentStateChanged", event => {
     renderMessages()
 })
 
 export const MessageList = () => {
-    return `
+    messagesContainerTarget.innerHTML = `
     <header class="messagesContainer__Header">Chat</header>
     <section class="messagesContainer__Messages"></section>
     <input type="text" id="messageText" name="message">
