@@ -32,7 +32,6 @@ contentTarget.addEventListener("click", event => {
 
 contentTarget.addEventListener("click", clickEvent => {
     if (clickEvent.target.id === "saveEvent") {
-        debugger
 
         const eventTitle = document.querySelector("#eventTitle").value
         const date = document.querySelector("#eventDate").value
