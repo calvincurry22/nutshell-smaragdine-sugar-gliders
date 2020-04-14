@@ -1,0 +1,81 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "username": "",
+      "email": "",
+      "password": ""
+    }
+  ],
+  "articles": [
+    {
+      "id": 1,
+      "userId": "",
+      "url": "",
+      "title": "",
+      "synopsis": "",
+      "timestamp": ""
+    }
+  ],
+  "events": [
+    {
+      "id": 1,
+      "userId": "",
+      "event": "",
+      "date": "",
+      "location": ""
+    }
+  ],
+  "tasks": [
+    {
+      "id": 1,
+      "task": "plannig",
+      "userId": "123",
+      "complete": true,
+      "dateToComplete": "12/22/2020"
+    },
+    {
+      "task": "presenting",
+      "userId": "",
+      "complete": false,
+      "dateToComplete": "2020-04-17",
+      "id": 4
+    },
+    {
+      "task": "reviewing",
+      "userId": "",
+      "complete": false,
+      "dateToComplete": "2020-04-16",
+      "id": 7
+    },
+    {
+      "task": "presentation",
+      "userId": "",
+      "complete": false,
+      "dateToComplete": "2020-04-17",
+      "id": 8
+    },
+    {
+      "task": "coding",
+      "userId": "",
+      "complete": false,
+      "dateToComplete": "2020-04-23",
+      "id": 9
+    }
+  ],
+  "friends": [
+    {
+      "id": 1,
+      "userId": "",
+      "friendUserId": ""
+    }
+  ],
+  "messages": [
+    {
+      "id": 1,
+      "userId": "",
+      "messageText": "",
+      "timestamp": ""
+    }
+  ]
+}
