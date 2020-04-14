@@ -4,6 +4,7 @@ export const EventHTML = (event) => {
         <div class="event__title">${event.event}</div>
         <div class="event__detail">${event.date}</div>
         <div class="event__detail">${event.location}</div>
+        <div class="event__detail">posted by: ${event.userId}</div>
         <button id="deleteEvent--${event.id}">x</button>
     </div>
     `

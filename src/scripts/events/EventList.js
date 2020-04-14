@@ -29,8 +29,7 @@ contentTarget.addEventListener("click", event => {
 contentTarget.addEventListener("click", event => {
     if(event.target.id.includes("deleteEvent--")) {
         const eventToDelte = parseInt(event.target.id.split('--')[1])
-        
-        console.log(eventToDelte)
+
         deleteEvent(eventToDelte)
     }
 })
