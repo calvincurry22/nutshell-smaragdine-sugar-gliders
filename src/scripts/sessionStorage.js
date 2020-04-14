@@ -24,7 +24,7 @@ eventHub.addEventListener("loginValidation", customEvent => {
         } else {
             sessionStorage.setItem("userId", user.id);
             sessionStorage.setItem("userName", user.username);
-            alert( "Welcom, " + sessionStorage.getItem('userName') )
+            alert( "Welcome, " + sessionStorage.getItem('userName') )
         }
     })
 })
