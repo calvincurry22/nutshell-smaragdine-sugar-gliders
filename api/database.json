@@ -59,6 +59,13 @@
       "event": "NSS graduation",
       "date": "June",
       "location": "NSS"
+    },
+    {
+      "user": 1,
+      "event": "test",
+      "date": "2020-04-01",
+      "location": "Nashville",
+      "id": 5
     }
   ],
   "tasks": [],

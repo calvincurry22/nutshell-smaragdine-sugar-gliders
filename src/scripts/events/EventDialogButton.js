@@ -47,5 +47,8 @@ contentTarget.addEventListener("click", clickEvent => {
 
         // Change API state and application state
         saveEvent(newEvent)
+
+        const dialogElement = document.querySelector('.eventDialog')
+        dialogElement.close()
     }
 })
