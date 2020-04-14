@@ -1,7 +1,7 @@
 import { saveMessages } from "./messageProvider.js"
 
 // Jon Durr - html rep. of New Message Button plus relevent events to add message to databse
-const messageButtonTarget = document.querySelector("#newMessageButton")
+const eventHub = document.querySelector("#container")
 
 export const NewMessageButton = () => {
     return `
@@ -9,17 +9,19 @@ export const NewMessageButton = () => {
     `
 }
 
-messageButtonTarget.addEventListener("click", event => {
-    const userId = parseInt(sessionStorage.getItem(currentUserId))
-    const messageText = document.querySelector("#messageText").value
-    const timestamp = Date.now()
+eventHub.addEventListener("click", event => {
+    if (event.target.id === "newMessageButton") {
+        // const userId = parseInt(sessionStorage.getItem(currentUserId))
+        const messageText = document.querySelector("#messageText").value
+        const timestamp = Date.now()
 
-    const newMessage = {
-        userId: userId,
-        messageText: messageText,
-        timestamp: timestamp
+        const newMessage = {
+            userId: 1,
+            messageText: messageText,
+            timestamp: timestamp
+        }
+        saveMessages(newMessage)
     }
-    saveMessages(newMessage)
 })
 
 

@@ -1,6 +1,6 @@
 // Jon Durr - app controller component that will control the current page state of the app
 
-const eventHub = document.querySelector(".container")
+const eventHub = document.querySelector("#container")
 
 export const dispatchStateChangeEvent = () => {
     const componentStateChangedEvent = new CustomEvent("componentStateChanged")
