@@ -1,7 +1,5 @@
 /* This file was written by Parker. This file creates the HTML for the form and handles the saving of the new event*/
 
-import { saveEvent } from "./eventsProvider.js"
-
 const contentTarget = document.querySelector('.eventsContainer')
 
 const render = () => {
