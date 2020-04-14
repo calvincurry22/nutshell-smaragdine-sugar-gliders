@@ -7,7 +7,24 @@
       "password": "1234"
     }
   ],
-  "articles": [],
+  "articles": [
+    {
+      "id": 1,
+      "userId": 1,
+      "url": "http://www.nba.com",
+      "title": "I Miss the NBA",
+      "synopsis": "The NBA is gone. Please Bring it back ",
+      "timestamp": 1586887444262
+    },
+    {
+      "userId": 1,
+      "url": "http://content.time.com/time/specials/packages/article/0,28804,1860871_1860876_1860992,00.html",
+      "title": "The Moon Landing was Fake",
+      "synopsis": "We have been led to believe that man landed on the moon.....but did he?",
+      "timestamp": 1586896299217,
+      "id": 2
+    }
+  ],
   "messages": [
     {
       "id": 1,
@@ -23,69 +40,9 @@
     },
     {
       "userId": 1,
-      "messageText": "jhjhg",
-      "timestamp": 1586883687930,
-      "id": 3
-    },
-    {
-      "userId": 1,
       "messageText": "gfghfg",
       "timestamp": 1586883783442,
       "id": 4
-    },
-    {
-      "userId": 1,
-      "messageText": "hello",
-      "timestamp": 1586883815092,
-      "id": 5
-    },
-    {
-      "userId": 1,
-      "messageText": "Hi peeps!",
-      "timestamp": 1586884391644,
-      "id": 6
-    },
-    {
-      "userId": 1,
-      "messageText": "hi y'all",
-      "timestamp": 1586884485838,
-      "id": 7
-    },
-    {
-      "userId": 1,
-      "messageText": "jd was here",
-      "timestamp": 1586884859927,
-      "id": 8
-    },
-    {
-      "userId": 1,
-      "messageText": "Nothing",
-      "timestamp": 1586887352839,
-      "id": 9
-    },
-    {
-      "userId": 1,
-      "messageText": "xzczx",
-      "timestamp": 1586887504225,
-      "id": 10
-    },
-    {
-      "userId": 1,
-      "messageText": "zxc",
-      "timestamp": 1586887513415,
-      "id": 11
-    },
-    {
-      "userId": 1,
-      "messageText": "dsd",
-      "timestamp": 1586888971589,
-      "id": 12
-    },
-    {
-      "userId": 1,
-      "messageText": "sdfsd",
-      "timestamp": 1586888989019,
-      "id": 13
     }
   ],
   "events": [
