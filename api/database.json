@@ -7,41 +7,7 @@
       "password": "1234"
     }
   ],
-  "articles": [
-    {
-      "id": 1,
-      "userId": "",
-      "url": "",
-      "title": "",
-      "synopsis": "",
-      "timestamp": ""
-    }
-  ],
-  "events": [
-    {
-      "id": 1,
-      "userId": "",
-      "event": "",
-      "date": "",
-      "location": ""
-    }
-  ],
-  "tasks": [
-    {
-      "id": 1,
-      "task": "",
-      "userId": "",
-      "complete": "",
-      "dateToComplete": ""
-    }
-  ],
-  "friends": [
-    {
-      "id": 1,
-      "userId": "",
-      "friendUserId": ""
-    }
-  ],
+  "articles": [],
   "messages": [
     {
       "id": 1,
@@ -84,6 +50,37 @@
       "messageText": "hi y'all",
       "timestamp": 1586884485838,
       "id": 7
+    },
+    {
+      "userId": 1,
+      "messageText": "jd was here",
+      "timestamp": 1586884859927,
+      "id": 8
     }
-  ]
+  ],
+  "events": [
+    {
+      "id": 1,
+      "userId": 1,
+      "event": "NSS graduation",
+      "date": "June",
+      "location": "NSS"
+    },
+    {
+      "id": 4,
+      "userId": 1,
+      "event": "NSS graduation",
+      "date": "June",
+      "location": "NSS"
+    },
+    {
+      "userId": 1,
+      "event": "Test",
+      "date": "2020-04-14",
+      "location": "Nashville",
+      "id": 5
+    }
+  ],
+  "tasks": [],
+  "friends": []
 }
