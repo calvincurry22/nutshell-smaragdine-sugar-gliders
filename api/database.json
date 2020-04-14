@@ -8,7 +8,15 @@
     }
   ],
   "articles": [],
-  "tasks": [],
+  "tasks": [
+    {
+      "task": "reviewing",
+      "userId": 1,
+      "complete": false,
+      "dateToComplete": "2020-04-15",
+      "id": 1
+    }
+  ],
   "messages": [
     {
       "id": 1,
@@ -93,6 +101,12 @@
       "messageText": "hello",
       "timestamp": 1586896663127,
       "id": 14
+    },
+    {
+      "userId": 1,
+      "messageText": "hello",
+      "timestamp": 1586897600142,
+      "id": 15
     }
   ],
   "events": [],

@@ -1,6 +1,6 @@
 import { useTasks, saveTasks, deleteTask, updateTask } from "./TaskProvider.js"
 const eventHub = document.querySelector("#container")
-const contentTarget = document.querySelector(".eventsContainer")
+const contentTarget = document.querySelector(".userTasksContainer")
 
 eventHub.addEventListener("addTaskButtonClicked", e=>{
     const newTask = {
