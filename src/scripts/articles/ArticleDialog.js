@@ -41,9 +41,10 @@ contentTarget.addEventListener("click", clickEvent => {
         const articleUrl = document.querySelector("#article--Url").value
         const currentDate = Date.now()
         const dialogElement = document.querySelector(".article__Dialog")
+       
         
         const newArticle = {
-            
+            userId: 1,
             url: articleUrl,
             title: articleTitle,
             synopsis: articleSynopsis,
