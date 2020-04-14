@@ -2,39 +2,65 @@
   "users": [
     {
       "id": 1,
-      "username": "",
-      "email": "",
-      "password": ""
+      "username": "jondurr",
+      "email": "durrjp1@gmail.com",
+      "password": "1234"
     }
   ],
   "articles": [
     {
+      "id": 1,
       "userId": 1,
       "url": "http://www.nba.com",
       "title": "I Miss the NBA",
       "synopsis": "The NBA is gone. Please Bring it back ",
-      "timestamp": 1586887444262,
+      "timestamp": 1586887444262
+    },
+    {
+      "userId": 1,
+      "url": "http://content.time.com/time/specials/packages/article/0,28804,1860871_1860876_1860992,00.html",
+      "title": "The Moon Landing was Fake",
+      "synopsis": "We have been led to believe that man landed on the moon.....but did he?",
+      "timestamp": 1586896299217,
+      "id": 2
+    }
+  ],
+  "messages": [
+    {
+      "id": 1,
+      "userId": 1,
+      "messageText": "hello",
+      "timestamp": 1586881372
+    },
+    {
+      "userId": 1,
+      "messageText": "fghfg",
+      "timestamp": 1586883665909,
       "id": 2
     },
     {
       "userId": 1,
-      "url": "http://www.abc.com",
-      "title": "do the thing",
-      "synopsis": "the thing",
-      "timestamp": 1586887885335,
+      "messageText": "gfghfg",
+      "timestamp": 1586883783442,
       "id": 4
-    },
-    {
-      "userId": 1,
-      "url": "http://www.nba.com",
-      "title": "dsafa",
-      "synopsis": "dsaf",
-      "timestamp": 1586894452569,
-      "id": 5
     }
   ],
-  "events": [],
+  "events": [
+    {
+      "id": 1,
+      "userId": 1,
+      "event": "NSS graduation",
+      "date": "June",
+      "location": "NSS"
+    },
+    {
+      "id": 4,
+      "userId": 1,
+      "event": "NSS graduation",
+      "date": "June",
+      "location": "NSS"
+    }
+  ],
   "tasks": [],
-  "friends": [],
-  "messages": []
+  "friends": []
 }
