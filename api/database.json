@@ -45,9 +45,9 @@
     "messages": [
         {
             "id": 1,
-            "userId": "",
-            "messageText": "",
-            "timestamp": ""
+            "userId": 1,
+            "messageText": "hello",
+            "timestamp": 1586881372
         }
     ]
 }
