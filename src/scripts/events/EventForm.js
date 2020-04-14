@@ -1,3 +1,5 @@
+/* This file was written by Parker. This file creates the HTML for the form and handles the saving of the new event*/
+
 import { saveEvent } from "./eventsProvider.js"
 
 const contentTarget = document.querySelector('.eventsContainer')
@@ -11,7 +13,7 @@ const render = () => {
             </fieldset>
             <fieldset>
                 <label for="eventDate">Date: </label>
-                <input type="text" id="eventDate" name="eventDate">
+                <input type="date" id="eventDate" name="eventDate">
             </fieldset>
             <fieldset>
                 <label for="eventLocation">Location: </label>
@@ -27,23 +29,3 @@ const render = () => {
 export const EventForm = () => {
     return render()
 }
-
-contentTarget.addEventListener("click", clickEvent => {
-    if (clickEvent.target.id === "saveEvent") {
-
-        const eventTitle = document.querySelector("#eventTitle").value
-        const date = document.querySelector("#eventLocation").value
-        const location = document.querySelector("#eventLocation").value
-
-        // Make a new object representation of a note
-        const newEvent = {
-            userId: 1,//????
-            event: eventTitle,
-            date: date,
-            location: location
-        }
-
-        // Change API state and application state
-        saveEvent(newEvent)
-    }
-})

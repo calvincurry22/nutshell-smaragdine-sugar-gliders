@@ -20,7 +20,7 @@ export const getEvents = () => {
 export const useEvents = () => events.slice()
 
 export const saveEvent = event => {
-    fetch('http://localhost:8088/events', {
+    return fetch('http://localhost:8088/events', {
         method: "POST",
         headers: {
             "Content-Type": "application/json"

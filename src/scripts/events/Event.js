@@ -1,3 +1,5 @@
+/* This file was written by Parker. This file converts an event object into an HTML representation*/
+
 export const EventHTML = (event) => {
     return `
     <div class="event">

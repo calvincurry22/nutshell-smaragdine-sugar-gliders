@@ -1,3 +1,5 @@
+/* This file was written by Parker. This file renders the list of Events to the DOM*/
+
 import { useEvents, deleteEvent } from "./eventsProvider.js"
 import { EventHTML } from "./Event.js"
 
@@ -22,7 +24,6 @@ contentTarget.addEventListener("click", event => {
     if(event.target.id === "addEvent") {
         const showEventForm = new CustomEvent ("addEventButtonClicked")
         eventHub.dispatchEvent(showEventForm)
-        console.log("dispatched")
     }
 })
 

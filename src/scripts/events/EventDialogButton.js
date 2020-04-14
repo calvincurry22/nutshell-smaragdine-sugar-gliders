@@ -1,4 +1,7 @@
+/* This file was written by Parker. This file handles the populates the dialog container with the form to add a new event*/
+
 import { EventForm } from "./EventForm.js"
+import { saveEvent } from "./eventsProvider.js"
 
 const contentTarget = document.querySelector('.dialogContainer')
 const eventHub = document.querySelector('#container')
@@ -24,5 +27,26 @@ eventHub.addEventListener("addEventButtonClicked", event => {
 contentTarget.addEventListener("click", event => {
     if(event.target.id === "closeDialog") {
         event.target.parentElement.close()
+    }
+})
+
+contentTarget.addEventListener("click", clickEvent => {
+    if (clickEvent.target.id === "saveEvent") {
+        debugger
+
+        const eventTitle = document.querySelector("#eventTitle").value
+        const date = document.querySelector("#eventDate").value
+        const location = document.querySelector("#eventLocation").value
+
+        // Make a new object representation of a note
+        const newEvent = {
+            userId: 1,//????
+            event: eventTitle,
+            date: date,
+            location: location
+        }
+
+        // Change API state and application state
+        saveEvent(newEvent)
     }
 })
