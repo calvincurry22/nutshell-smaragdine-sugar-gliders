@@ -3,7 +3,7 @@ const eventHub = document.querySelector('#container')
 
 let events = []
 
-const dispatchStateChangeEvent = () => {
+const dispatchEventStateChangeEvent = () => {
     const eventStateChangedEvent = new CustomEvent("eventStateChanged")
 
     eventHub.dispatchEvent(eventStateChangedEvent)
@@ -19,22 +19,22 @@ export const getEvents = () => {
 
 export const useEvents = () => events.slice()
 
-export const saveNote = note => {
+export const saveEvent = event => {
     fetch('http://localhost:8088/events', {
         method: "POST",
         headers: {
             "Content-Type": "application/json"
         },
-        body: JSON.stringify(note)
+        body: JSON.stringify(event)
     })
     .then(getEvents)
     .then(dispatchStateChangeEvent)
 }
 
 export const deleteEvent = id => {
-    return fetch(`http://localhost:8080/events/${id}`, {
+    return fetch(`http://localhost:8088/events/${id}`, {
         method: "DELETE",
     })
     .then(getEvents)
-    .then(dispatchStateChangeEvent)
+    .then(dispatchEventStateChangeEvent)
 }
