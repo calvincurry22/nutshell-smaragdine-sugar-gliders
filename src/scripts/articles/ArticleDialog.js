@@ -18,8 +18,9 @@ export const ArticleDialog = () => {
                 <input type="textarea" id="article--Synopsis" name="articleSynopsis"><br>
                 <label for="articleUrl">Enter URL:</label><br>
                 <input type="url" id="article--Url" name="articleUrl"><br><br>
-                <button id="button--SaveArticle">Save Article</button>
             </form>
+            <button id="button--SaveArticle">Save Article</button>
+            <p id="urlMessage">URL must start with http:// or https://</p>
         </dialog> 
     `
 }
@@ -40,7 +41,7 @@ contentTarget.addEventListener("click", clickEvent => {
         const articleUrl = document.querySelector("#article--Url").value
         const currentDate = Date.now()
         const dialogElement = document.querySelector(".article__Dialog")
-
+        
         const newArticle = {
             
             url: articleUrl,
@@ -50,7 +51,6 @@ contentTarget.addEventListener("click", clickEvent => {
         }
         saveArticle(newArticle)
         dialogElement.close()
-
     }
 })
 

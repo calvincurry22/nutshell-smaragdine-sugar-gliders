@@ -9,21 +9,14 @@
   ],
   "articles": [
     {
-      "url": "www.nba.com",
+      "url": "http://www.nba.com",
       "title": "I Miss the NBA",
       "synopsis": "The NBA is gone. Please Bring it back ",
       "timestamp": 1586887444262,
       "id": 2
     },
     {
-      "url": "www.cnn.com",
-      "title": "The Moon Landing was Fake",
-      "synopsis": "We have been led to believe that the Moon Landing really happened.....but did it??",
-      "timestamp": 1586887485886,
-      "id": 3
-    },
-    {
-      "url": "www.abc.com",
+      "url": "http://www.abc.com",
       "title": "do the thing",
       "synopsis": "the thing",
       "timestamp": 1586887885335,
