@@ -33,11 +33,11 @@ const renderMessages = () => {
         password: "1234"
     }
 
-
-    contentTarget.innerHTML = messages.map(message => Message(message, currentUser)).join("")
+    const sortedMessages = messages.sort((a,b) => new Date(a.timestamp) - new Date(b.timestamp))
+    contentTarget.innerHTML = sortedMessages.map(message => Message(message, currentUser)).join("")
 
 }
 
-eventHub.addEventListener("loginOrRegisterButtonClicked", event => {
+eventHub.addEventListener("loginButtonClicked", event => {
     renderMessages()
 })
