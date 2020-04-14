@@ -8,58 +8,93 @@
     }
   ],
   "articles": [],
-  "events": [],
-  "tasks": [
+  "tasks": [],
+  "messages": [
     {
-      "id": 3,
-      "task": "planning",
-      "userId": 3,
-      "complete": true,
-      "dateToComplete": "2020-04-15"
-    },
-    {
-      "id": 6,
-      "task": "coding",
-      "userId": 3,
-      "complete": true,
-      "dateToComplete": "2020-04-16"
-    },
-    {
-      "id": 7,
-      "task": "presentation",
-      "userId": 3,
-      "complete": true,
-      "dateToComplete": "2020-04-17"
-    },
-    {
-      "id": 8,
-      "task": "planning",
-      "userId": 3,
-      "complete": true,
-      "dateToComplete": "2020-04-15"
-    },
-    {
-      "id": 9,
-      "task": "coding",
-      "userId": 3,
-      "complete": true,
-      "dateToComplete": "2020-04-16"
-    },
-    {
-      "id": 10,
-      "task": "demo",
-      "userId": 3,
-      "complete": true,
-      "dateToComplete": "2020-04-20"
-    },
-    {
-      "task": "testing",
+      "id": 1,
       "userId": 1,
-      "complete": false,
-      "dateToComplete": "2020-04-15",
+      "messageText": "hello",
+      "timestamp": 1586881372
+    },
+    {
+      "userId": 1,
+      "messageText": "fghfg",
+      "timestamp": 1586883665909,
+      "id": 2
+    },
+    {
+      "userId": 1,
+      "messageText": "jhjhg",
+      "timestamp": 1586883687930,
+      "id": 3
+    },
+    {
+      "userId": 1,
+      "messageText": "gfghfg",
+      "timestamp": 1586883783442,
+      "id": 4
+    },
+    {
+      "userId": 1,
+      "messageText": "hello",
+      "timestamp": 1586883815092,
+      "id": 5
+    },
+    {
+      "userId": 1,
+      "messageText": "Hi peeps!",
+      "timestamp": 1586884391644,
+      "id": 6
+    },
+    {
+      "userId": 1,
+      "messageText": "hi y'all",
+      "timestamp": 1586884485838,
+      "id": 7
+    },
+    {
+      "userId": 1,
+      "messageText": "jd was here",
+      "timestamp": 1586884859927,
+      "id": 8
+    },
+    {
+      "userId": 1,
+      "messageText": "Nothing",
+      "timestamp": 1586887352839,
+      "id": 9
+    },
+    {
+      "userId": 1,
+      "messageText": "xzczx",
+      "timestamp": 1586887504225,
+      "id": 10
+    },
+    {
+      "userId": 1,
+      "messageText": "zxc",
+      "timestamp": 1586887513415,
       "id": 11
+    },
+    {
+      "userId": 1,
+      "messageText": "dsd",
+      "timestamp": 1586888971589,
+      "id": 12
+    },
+    {
+      "userId": 1,
+      "messageText": "sdfsd",
+      "timestamp": 1586888989019,
+      "id": 13
+    },
+    {
+      "userId": 1,
+      "messageText": "hello",
+      "timestamp": 1586896663127,
+      "id": 14
     }
   ],
-  "friends": [],
-  "messages": []
+  "events": [],
+  "friends": []
 }
