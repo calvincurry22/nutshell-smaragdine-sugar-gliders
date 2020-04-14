@@ -39,7 +39,7 @@ contentTarget.addEventListener("click", clickEvent => {
 
         // Make a new object representation of a note
         const newEvent = {
-            userId: 1,//????
+            user: 1,//????
             event: eventTitle,
             date: date,
             location: location

@@ -20,7 +20,6 @@ export const ArticleDialog = () => {
                 <input type="url" id="article--Url" name="articleUrl"><br><br>
             </form>
             <button id="button--SaveArticle">Save Article</button>
-            <p id="urlMessage">URL must start with http:// or https://</p>
         </dialog> 
     `
 }
@@ -41,17 +40,23 @@ contentTarget.addEventListener("click", clickEvent => {
         const articleUrl = document.querySelector("#article--Url").value
         const currentDate = Date.now()
         const dialogElement = document.querySelector(".article__Dialog")
-       
+        const [a, b] = articleUrl.split("//")
+
+        if(a === "http:" || a === "https:") {
         
-        const newArticle = {
-            userId: 1,
-            url: articleUrl,
-            title: articleTitle,
-            synopsis: articleSynopsis,
-            timestamp: currentDate
+            const newArticle = {
+                userId: 1,
+                url: articleUrl,
+                title: articleTitle,
+                synopsis: articleSynopsis,
+                timestamp: currentDate
+            }
+            saveArticle(newArticle)
+            dialogElement.close()
+        } 
+        else {
+           alert("Url must begin with http:// or https://")
         }
-        saveArticle(newArticle)
-        dialogElement.close()
-    }
+    }    
 })
 
