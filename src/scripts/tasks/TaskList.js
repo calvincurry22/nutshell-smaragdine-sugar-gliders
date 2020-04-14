@@ -1,11 +1,11 @@
-import { useTasks, saveTasks } from "./TaskProvider.js"
+import { useTasks, saveTasks, deleteTask, updateTask } from "./TaskProvider.js"
 const eventHub = document.querySelector("#container")
 const contentTarget = document.querySelector(".eventsContainer")
 
 eventHub.addEventListener("addTaskButtonClicked", e=>{
     const newTask = {
         task: e.detail.task,
-        userId: "",
+        userId: 1,
         complete: e.detail.complete,
         dateToComplete: e.detail.dateToComplete
     }
@@ -17,32 +17,48 @@ const render = (taskObject) => {
         if(individualTask.complete !== true)
         {
             return `<section>
-                ${                
-                    `<input type = "checkbox" id = "checkbox--${individualTask.id} 
-                        value = "${individualTask.task}">
+            ${                
+                    `<input type = "checkbox" id = "checkbox--${individualTask.id}">
                     <ul>
-                        <li>Task: ${individualTask.task}</li>
-                        <li>Complete: ${individualTask.complete}</li>
-                        <li>Date to complete: ${individualTask.dateToComplete}</li>
-                    </ul>`
-                }
+                    <li id = "taskName--${individualTask.id}">Task: ${individualTask.task}</li>
+                    <li id = "taskComplete--${individualTask.id}">Complete: ${individualTask.complete}</li>
+                        <li id = "dateToComplete--${individualTask.id}">Date to complete: ${individualTask.dateToComplete}</li>
+                        </ul>
+                        <button id = "deleteTaskButtonClicked--${individualTask.id}">
+                        Delete</button>`
+            }
                 </section>`
-        } 
-    })
+        }
+    }).join("")
 }
 contentTarget.addEventListener("click", e=>{
-    if(e.target.id.startsWith("checkbox--")){
-        const [_, taskChecked] = e.target.id.split("--")
-        const taskCompleted = new CustomEvent("taskCompleted", {
-            detail: {
-                completedTask: taskChecked
-            }
-        })
-        eventHub.dispatchEvent(taskCompleted)
+    if(e.target.id.startsWith("deleteTaskButtonClicked--")){
+        const [_, taskToDelete] = e.target.id.split("--")
+        console.log('clicked ',taskToDelete)
+        deleteTask(taskToDelete)
     }
-    
 })
-eventHub.addEventListener("taskStateChanged", e=>{
+
+contentTarget.addEventListener("click", e=>{
+    if(e.target.id.startsWith("checkbox--")){
+        const [_, taskId] = e.target.id.split("--")
+        const tasks = useTasks()
+        const userTask = tasks.find(task=>task.id === parseInt(taskId))
+        const task_Name = userTask.task
+        let task_Complete = true
+        const dateTo_Complete = userTask.dateToComplete
+        const newTask = {
+            id: taskId,
+            task: task_Name,
+            userId: 3,
+            complete: task_Complete,
+            dateToComplete: dateTo_Complete
+        }
+        updateTask(newTask)
+    }    
+})
+
+eventHub.addEventListener("taskStateEventChanged", e=>{
     TaskList()
 })
 

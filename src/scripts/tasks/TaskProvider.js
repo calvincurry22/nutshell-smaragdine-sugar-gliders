@@ -7,7 +7,7 @@ export const getTasks = () => {
     .then(data=>tasks = data)
 }
 export const dispatchEventStateChange = () => {
-    const taskStateChangedEvent = new CustomEvent("taskStateChanged")
+    const taskStateChangedEvent = new CustomEvent("taskStateEventChanged")
     eventHub.dispatchEvent(taskStateChangedEvent) 
 }
 export const saveTasks = (task) => {
@@ -22,8 +22,22 @@ export const saveTasks = (task) => {
     .then(dispatchEventStateChange)
 }
 export const deleteTask = (taskId) => {
+    
     return fetch(`http://localhost:8088/tasks/${taskId}`,{
-        "method":"DELETE",
+        method:"DELETE",
+    })
+    .then(getTasks)
+    .then(dispatchEventStateChange)
+}
+
+
+export const updateTask = (task) => {
+    return fetch(`http://localhost:8088/tasks/${task.id}`,{
+        method:"PUT",
+        "headers": {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify(task)
     })
     .then(getTasks)
     .then(dispatchEventStateChange)
