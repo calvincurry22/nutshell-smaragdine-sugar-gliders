@@ -1,0 +1,51 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "username": "",
+      "email": "",
+      "password": ""
+    }
+  ],
+  "articles": [],
+  "events": [
+    {
+      "id": 1,
+      "userId": 1,
+      "event": "NSS graduation",
+      "date": "June",
+      "location": "NSS"
+    },
+    {
+      "id": 2,
+      "userId": 1,
+      "event": "NSS graduation",
+      "date": "June",
+      "location": "NSS"
+    },
+    {
+      "id": 3,
+      "userId": 1,
+      "event": "NSS graduation",
+      "date": "June",
+      "location": "NSS"
+    },
+    {
+      "id": 4,
+      "userId": 1,
+      "event": "NSS graduation",
+      "date": "June",
+      "location": "NSS"
+    },
+    {
+      "userId": 1,
+      "event": "Test",
+      "date": "2020-04-14",
+      "location": "Nashville",
+      "id": 5
+    }
+  ],
+  "tasks": [],
+  "friends": [],
+  "messages": []
+}
