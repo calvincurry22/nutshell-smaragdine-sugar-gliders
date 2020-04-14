@@ -72,6 +72,18 @@
       "messageText": "hello",
       "timestamp": 1586883815092,
       "id": 5
+    },
+    {
+      "userId": 1,
+      "messageText": "Hi peeps!",
+      "timestamp": 1586884391644,
+      "id": 6
+    },
+    {
+      "userId": 1,
+      "messageText": "hi y'all",
+      "timestamp": 1586884485838,
+      "id": 7
     }
   ]
 }
