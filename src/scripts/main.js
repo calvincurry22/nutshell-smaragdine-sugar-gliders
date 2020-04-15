@@ -7,7 +7,13 @@ import "./registration/CloseDialogButton.js";
 import { ArticleDialogButton } from "./articles/ArticleDialogButton.js";
 import "./articles/ArticleDialog.js"
 import "./events/EventDialogButton.js"
-import "./navBar/RenderNavBar.js"
+import { renderNavigation } from "./navigation/Navigation.js";
+import { UserCheck } from "./AppController.js";
+import './navigation/LogoutButton.js'
 
+renderNavigation()
 SignInList()
 ArticleDialogButton()
+UserCheck()
+
+
