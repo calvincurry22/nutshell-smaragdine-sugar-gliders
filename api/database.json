@@ -2,9 +2,15 @@
   "users": [
     {
       "id": 1,
-      "username": "jondurr",
-      "email": "durrjp1@gmail.com",
-      "password": "1234"
+      "username": "Steve Brownlee",
+      "email": "me@me.com",
+      "password": "coach"
+    },
+    {
+      "username": "Michael Carroll",
+      "email": "methree@me.com",
+      "password": "meme",
+      "id": 2
     }
   ],
   "articles": [
@@ -23,6 +29,14 @@
       "synopsis": "We have been led to believe that man landed on the moon.....but did he?",
       "timestamp": 1586896299217,
       "id": 2
+    },
+    {
+      "userId": 1,
+      "url": "http://www.mlb.com",
+      "title": "I Miss the MLB",
+      "synopsis": "The MLB is gone. Please bring it back!",
+      "timestamp": 1586901245064,
+      "id": 3
     }
   ],
   "messages": [
@@ -43,6 +57,12 @@
       "messageText": "gfghfg",
       "timestamp": 1586883783442,
       "id": 4
+    },
+    {
+      "userId": 1,
+      "messageText": "Muahahahahaha",
+      "timestamp": 1586901265786,
+      "id": 5
     }
   ],
   "events": [
@@ -66,6 +86,13 @@
       "date": "2020-04-01",
       "location": "Nashville",
       "id": 5
+    },
+    {
+      "user": 1,
+      "event": "Dinner",
+      "date": "2020-04-14",
+      "location": "Huntsville",
+      "id": 6
     }
   ],
   "tasks": [],
