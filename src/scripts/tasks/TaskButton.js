@@ -8,12 +8,13 @@ const contentTarget = document.querySelector(".saveTaskButtonContainers")
 
 export const Task = () => {
     contentTarget.innerHTML = `
-    <section>
+    <button id="addTaskButtonClicked">Add task</button>
+    <dialog id="taskDialog">
         <input type="text" placeholder="task name" id="task">
         <label for="dateToComplete">Date to complete</label>
         <input type="date" id="dateToComplete">
-        <button id="saveTask">Add task</button>
-    </section>
+        <button id="saveTask">Save task</button>
+    </dialog>
     `
 }
 
@@ -31,5 +32,11 @@ contentTarget.addEventListener("click", e=>{
             }
         })
         eventHub.dispatchEvent(customTaskEvent)
+    }
+})
+contentTarget.addEventListener('click', e=>{
+    if(e.target.id === "addTaskButtonClicked"){
+        const taskDialog = document.querySelector("#taskDialog")
+        taskDialog.showModal()      
     }
 })

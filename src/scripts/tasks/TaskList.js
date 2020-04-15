@@ -24,7 +24,7 @@ eventHub.addEventListener("addTaskButtonClicked", e=>{
 const render = () => {
     getTasks().then(() => {
         const tasks = useTasks()
-        Task()
+        Task()     
         contentTarget.innerHTML = tasks.map(individualTask => {
             if(individualTask.complete !== true)
             {
@@ -75,5 +75,5 @@ eventHub.addEventListener("componentStateChanged", event =>{
 })
 
 export const TaskList = () => {
-    render()
+    render()   
 }
