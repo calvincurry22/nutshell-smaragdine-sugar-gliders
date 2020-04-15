@@ -11,7 +11,7 @@ import { Task } from "./TaskButton.js"
 const eventHub = document.querySelector("#container")
 const contentTarget = document.querySelector(".userTasksContainer")
 
-eventHub.addEventListener("addTaskButtonClicked", e=>{
+eventHub.addEventListener("saveTaskButtonClicked", e=>{
     const newTask = {
         task: e.detail.task,
         userId: 1,
@@ -24,7 +24,7 @@ eventHub.addEventListener("addTaskButtonClicked", e=>{
 const render = () => {
     getTasks().then(() => {
         const tasks = useTasks()
-        Task()
+        Task()     
         contentTarget.innerHTML = tasks.map(individualTask => {
             if(individualTask.complete !== true)
             {
@@ -75,5 +75,5 @@ eventHub.addEventListener("componentStateChanged", event =>{
 })
 
 export const TaskList = () => {
-    render()
+    render()   
 }
