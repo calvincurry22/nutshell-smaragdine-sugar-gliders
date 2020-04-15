@@ -5,9 +5,7 @@
 */
 
 export const CloseDialog = () => {
-    const buttonContentTarget = document.querySelector("#closeButtonContainer")
-
-    buttonContentTarget.innerHTML = `
+    return`
     <button id="closeDialogButton">Close</button>
     `
 }

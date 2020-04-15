@@ -1,13 +1,11 @@
 /*
 * Author: Michael Carroll
 * This module holds an HTML representation of the registration button. The function, SignUpButton,
-* is exported to ????.js where it is invoked.
+* is exported to RegisterDialog.js where it is invoked.
 */
 
-
 export const SignUpButton = () => {
-    const buttonContentTarget = document.querySelector("#signUpButtonContainer");
-    buttonContentTarget.innerHTML =`
+    return`
     <button id="signUpButton">Sign Up</button>
     `
 }

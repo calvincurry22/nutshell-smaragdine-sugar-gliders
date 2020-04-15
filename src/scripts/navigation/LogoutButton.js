@@ -1,13 +1,5 @@
 const eventHub = document.querySelector("#container")
 
-export const LogoutButton = () => {
-    return `
-    <button id="logoutButton">Logout</button>
-    `
-}
-
-
-
 eventHub.addEventListener("click", event => {
     if (event.target.id === "logoutButton") {
         sessionStorage.clear()
@@ -15,3 +7,11 @@ eventHub.addEventListener("click", event => {
         eventHub.dispatchEvent(logoutEvent)
     }
 })
+
+export const renderLogout = () => {
+    const contentTarget = document.querySelector('.logoutButtonContainer')
+
+    contentTarget.innerHTML = `
+        <button id="logoutButton">Logout</button>
+    `
+}

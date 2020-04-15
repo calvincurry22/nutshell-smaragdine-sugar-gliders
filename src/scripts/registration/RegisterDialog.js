@@ -14,7 +14,9 @@ export const RegisterForm = () => {
     contentTarget.innerHTML =`
         <dialog class="dialog" id="registrationForm">
             <fieldset>
-                <div id="closeButtonContainer"></div>
+                <div id="closeButtonContainer">
+                    ${CloseDialog()}
+                </div>
                 <form>
                     <label class="label label--registration" for="registerEmail">Enter Email:</label>
                     <input type="email" id="registerEmail" required /></br>
@@ -23,12 +25,14 @@ export const RegisterForm = () => {
                     <input type="text" id="registerUserName" required /></br>
 
                     <label class="label label--registration" for="registerPassword">Enter Password:</label>
-                    <input type="text" id="registerPassword" required /></br>
+                    <input type="password" id="registerPassword" required /></br>
 
                     <label class="label label--registration" for="registerPasswordConfirmation">Re-Enter Password:</label>
-                    <input type="text" id="registerPasswordConfirmation" required /></br>
+                    <input type="password" id="registerPasswordConfirmation" required /></br>
                 </form>
-                <div id="signUpButtonContainer"></div>
+                <div id="signUpButtonContainer">
+                    ${SignUpButton()}
+                </div>
             </fieldset>
         </dialog>
         `
@@ -71,8 +75,6 @@ eventHub.addEventListener("signUpButtonClicked", customEvent => {
 
 eventHub.addEventListener("registerButtonClicked", customEvent => {
     RegisterForm();
-    SignUpButton();
-    CloseDialog();
     const dialog = document.querySelector("#registrationForm");
     dialog.showModal();
     
