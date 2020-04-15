@@ -8,6 +8,10 @@ import { ArticleDialogButton } from "./articles/ArticleDialogButton.js";
 import "./articles/ArticleDialog.js"
 import "./events/EventDialogButton.js"
 import "./navBar/RenderNavBar.js"
+import { UserCheck } from "./AppController.js";
 
 SignInList()
 ArticleDialogButton()
+UserCheck()
+
+
