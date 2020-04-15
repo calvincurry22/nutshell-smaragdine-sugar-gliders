@@ -1,6 +1,6 @@
 // Jon Durr - messages/chat rendering component
 
-import { useMessages, getMessages } from "./messageProvider.js"
+import { useMessages, getMessages, deleteMessage } from "./messageProvider.js"
 import { NewMessageButton } from "./NewMessageButton.js"
 import { Message } from "./Message.js"
 import { useUsers, getUsers } from "../user/userProvider.js"
@@ -43,4 +43,11 @@ const renderMessages = () => {
         `
     })
 }
+
+eventHub.addEventListener("click", clickEvent => {
+    if (clickEvent.target.id.startsWith("deleteMessageBtn--")) {
+        const [prefix, messageId] = clickEvent.target.id.split("--")
+        deleteMessage(messageId)
+    }
+})
 
