@@ -32,6 +32,8 @@ eventHub.addEventListener("userWasVerified", event => {
 })
 
 eventHub.addEventListener("logoutButtonClicked", event => {
+    const contentTarget = document.querySelector('.logoutButtonContainer')
+    contentTarget.innerHTML = ''
     pageState = "login"
     pageStateChanged()
 })
