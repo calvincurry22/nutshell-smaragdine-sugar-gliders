@@ -24,6 +24,7 @@ const renderMessages = () => {
         const contentTarget = document.querySelector(".messagesContainer")
         const messages = useMessages()
         const users = useUsers()
+        const currentUserId = parseInt(sessionStorage.getItem("userId"))
         const sortedMessages = messages.sort((a,b) => new Date(a.timestamp) - new Date(b.timestamp))
 
         const messageListHTML = sortedMessages.map(message => {
@@ -31,7 +32,7 @@ const renderMessages = () => {
                 return user.id === message.userId
             })
             
-            return Message(message, messagesUser)
+            return Message(message, messagesUser, currentUserId)
         }).join("")
         contentTarget.innerHTML = `
         <header>Chat History</header>
