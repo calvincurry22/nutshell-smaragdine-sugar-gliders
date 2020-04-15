@@ -9,7 +9,7 @@ import { ArticleDialogButton } from "./ArticleDialogButton.js";
 let contentTarget = document.querySelector(".articlesContainer")
 const eventHub = document.querySelector("#container")
 
-// here
+
 
 eventHub.addEventListener("componentStateChanged", event => {
     ArticleList()
@@ -26,8 +26,9 @@ const renderArticles = () => {
         ${articleCollection.map(articleObj => Article(articleObj)).join("")}
         ${ArticleDialogButton()}
         `
-})}
-// to here
+    })
+}
+
 
 
 eventHub.addEventListener("saveArticle", customEvent => {
