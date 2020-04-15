@@ -1,0 +1,79 @@
+.loginContainer {
+    background: #FCF4DB;
+    border: 22px solid #FFAA5C;
+    border-radius: 25px;
+    align-self: center;
+    margin: 15vh 30vw;
+}
+
+#loginForm {
+    border: none;
+    font-family: Raleway-Black;
+    font-size: 60px;
+    color: #FFFFFF;
+}
+
+#loginUserName{
+    border: none;
+    background-color: #CC624E;
+    height: 60px;
+    width: 100%;
+    font-family: Raleway-Black;
+    font-size: 60px;
+    color: #FFFFFF;
+    text-align: center;
+}
+
+#loginUserName::placeholder {
+    font-family: Raleway-Black;
+    font-size: 60px;
+    color: #FFFFFF;
+    text-align: center;
+}
+
+#loginPassword {
+    border: none;
+    background-color: #CC624E;
+    height: 60px;
+    width: 100%;
+    font-family: Raleway-Black;
+    font-size: 60px;
+    color: #FFFFFF;
+    text-align: center;
+}
+
+#loginPassword::placeholder {
+    font-family: Raleway-Black;
+    font-size: 60px;
+    color: #FFFFFF;
+    text-align: center;
+}
+
+#registerButtonContainer{
+    width: 100%;
+    text-align: right;
+    margin-bottom: 30px;
+}
+
+#registerButton {
+    border: none;
+    background-color: #FCF4DB;
+    font-family: Raleway-Black;
+    font-size: 48px;
+    color: #CC624E;
+    text-align: right;
+}
+
+#loginButtonContainer {
+    width: 100%;
+    margin-top: 30px;
+}
+
+#loginButton {
+    border: none;
+    background-color: #FCF4DB;
+    font-family: Raleway-Black;
+    font-size: 48px;
+    color: #CC624E;
+    text-align: right;
+}

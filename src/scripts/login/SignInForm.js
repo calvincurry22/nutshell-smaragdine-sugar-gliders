@@ -8,12 +8,10 @@
      <fieldset id="loginForm">
         <div id="registerButtonContainer"></div>
         <div id="usernameContainer">
-            <label class="label label--login" for="loginUserName">Username:</label>
-            <input type="text" id="loginUserName" onfocus="this.value=''" required>
+            <input type="text" id="loginUserName" onfocus="this.value=''" placeholder="username" required>
         </div>
         <div id="passwordContainer">
-            <label class="label label--login" for="loginPassword">Password:</label>
-            <input type="text" id="loginPassword" onfocus="this.value=''" required>
+            <input type="text" id="loginPassword" onfocus="this.value=''" placeholder="password" required>
         </div>
         <div id="loginButtonContainer"></div>
      </fieldset>
