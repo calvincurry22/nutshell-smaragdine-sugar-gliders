@@ -5,16 +5,9 @@
 */
 
 import { SignInForm } from "./SignInForm.js";
-import { RegisterButton } from "./RegisterButton.js";
-import { LoginButton } from "./LoginButton.js";
 
 const contentTarget = document.querySelector(".loginContainer");
 
 export const SignInList = () => {
     contentTarget.innerHTML = SignInForm();
-    const loginContentTarget = document.querySelector("#loginButtonContainer");
-    const registerContentTarget = document.querySelector("#registerButtonContainer");
-
-    registerContentTarget.innerHTML += RegisterButton();
-    loginContentTarget.innerHTML += LoginButton();
 }
