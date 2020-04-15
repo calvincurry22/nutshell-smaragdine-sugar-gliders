@@ -23,7 +23,7 @@ const renderArticles = () => {
     getArticles().then(() => {
         const articleCollection = useArticles()
         contentTarget.innerHTML = `
-        ${articleCollection.map(articleObj => Article(articleObj))}
+        ${articleCollection.map(articleObj => Article(articleObj)).join("")}
         ${ArticleDialogButton()}
         `
 })}

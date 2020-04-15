@@ -17,7 +17,6 @@ const render = () => {
         <button id="addEvent">Add Event</button>
         `
     })
-    
 }
 
 export const EventsList = () => {
