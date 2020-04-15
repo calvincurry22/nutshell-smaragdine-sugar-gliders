@@ -5,11 +5,14 @@
 const contentTarget = document.querySelector(".articlesContainer")
 const eventHub = document.querySelector("#container")
 
+// here
 export const ArticleDialogButton = () => {
-    contentTarget.innerHTML += `
+    return `
         <button id="button--AddArticle">Add new Article</button>
     `
 }
+
+//to here
 
 
 
@@ -22,4 +25,3 @@ eventHub.addEventListener('click', (clickEvent) => {
     }
 
 })
-  

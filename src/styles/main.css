@@ -1,1 +1,5 @@
-@import "article.css"
+@import "article.css";
+
+.hidden {
+    display: none
+}

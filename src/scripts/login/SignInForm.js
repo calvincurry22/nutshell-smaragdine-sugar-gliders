@@ -3,18 +3,17 @@
 * This module holds an HTML representation of the sign in form. The function, SignInForm,
 * is exported to SignInList.js where it is invoked.
 */
-
  export const SignInForm = () => {
      return`
      <fieldset id="loginForm">
         <div id="registerButtonContainer"></div>
         <div id="usernameContainer">
             <label class="label label--login" for="loginUserName">Username:</label>
-            <input type="text" id="loginUserName" required>
+            <input type="text" id="loginUserName" onfocus="this.value=''" required>
         </div>
         <div id="passwordContainer">
             <label class="label label--login" for="loginPassword">Password:</label>
-            <input type="text" id="loginPassword" required>
+            <input type="text" id="loginPassword" onfocus="this.value=''" required>
         </div>
         <div id="loginButtonContainer"></div>
      </fieldset>
@@ -34,6 +33,5 @@ eventHub.addEventListener("loginButtonClicked", customEvent => {
         }
     })
     eventHub.dispatchEvent(customLoginEvent)
-    document.getElementById("#loginUserName").value("");
-    document.getElementById("#loginPassword").value("");
+
 })

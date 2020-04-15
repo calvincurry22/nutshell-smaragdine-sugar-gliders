@@ -32,7 +32,6 @@ eventHub.addEventListener('addArticleBtnClicked', customEvent => {
     dialogElement.showModal()
 })
 
-
 contentTarget.addEventListener("click", clickEvent => {
     if(clickEvent.target.id === "button--SaveArticle") {
         const articleTitle = document.querySelector("#article--Title").value
