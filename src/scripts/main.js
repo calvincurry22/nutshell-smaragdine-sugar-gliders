@@ -9,6 +9,8 @@ import "./articles/ArticleDialog.js"
 import "./events/EventDialogButton.js"
 import "./navBar/RenderNavBar.js"
 import { UserCheck } from "./AppController.js";
+import "./friends/AddFriendButton.js"
+import "./friends/FriendDialog.js"
 
 SignInList()
 ArticleDialogButton()
