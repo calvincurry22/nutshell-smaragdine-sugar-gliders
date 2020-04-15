@@ -11,12 +11,13 @@ export const NewMessageButton = () => {
 
 eventHub.addEventListener("click", event => {
     if (event.target.id === "newMessageButton") {
-        // const userId = parseInt(sessionStorage.getItem(currentUserId))
+        const userId = parseInt(sessionStorage.getItem("userId"))
         const messageText = document.querySelector("#messageText").value
         const timestamp = Date.now()
 
+
         const newMessage = {
-            userId: 1,
+            userId: userId,
             messageText: messageText,
             timestamp: timestamp
         }

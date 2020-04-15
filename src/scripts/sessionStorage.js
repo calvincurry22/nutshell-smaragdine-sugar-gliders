@@ -6,6 +6,7 @@
 */
 
 import { useUsers, getUsers } from "./user/userProvider.js";
+import { Dashboard } from "./Dashboard.js";
 
 const eventHub = document.querySelector("#container");
 
@@ -14,17 +15,20 @@ eventHub.addEventListener("loginValidation", customEvent => {
         const allTheUsers = useUsers();
         const password = customEvent.detail.validation;
         const userName = customEvent.detail.user;
-        
+
         let user = allTheUsers.find(u => {
             return u.username === userName && u.password === password
         })
-        
         if (user === undefined) {
             alert("Combination of username and password does not exist.")
         } else {
             sessionStorage.setItem("userId", user.id);
             sessionStorage.setItem("userName", user.username);
-            alert( "Welcome, " + sessionStorage.getItem('userName') )
+            // here
+            const userVerifiedEvent = new CustomEvent("userWasVerified")
+            eventHub.dispatchEvent(userVerifiedEvent)
+            //to here
+            alert( "Welcome, " + sessionStorage.getItem('userName'))
         }
     })
 })

@@ -11,6 +11,18 @@
       "email": "methree@me.com",
       "password": "meme",
       "id": 2
+    },
+    {
+      "username": "mystery",
+      "email": "durrjp1@gmail.com",
+      "password": "123",
+      "id": 3
+    },
+    {
+      "username": "jon durr",
+      "email": "durrjp1@gmail.com",
+      "password": "jon",
+      "id": 4
     }
   ],
   "articles": [
@@ -63,6 +75,18 @@
       "messageText": "Muahahahahaha",
       "timestamp": 1586901265786,
       "id": 5
+    },
+    {
+      "userId": 3,
+      "messageText": "I'm a phantom",
+      "timestamp": 1586922567762,
+      "id": 6
+    },
+    {
+      "userId": 4,
+      "messageText": "What's Steve and a phantom doing here??",
+      "timestamp": 1586922628814,
+      "id": 7
     }
   ],
   "events": [
