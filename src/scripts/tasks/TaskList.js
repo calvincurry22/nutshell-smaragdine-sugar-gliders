@@ -11,7 +11,7 @@ import { Task } from "./TaskButton.js"
 const eventHub = document.querySelector("#container")
 const contentTarget = document.querySelector(".userTasksContainer")
 
-eventHub.addEventListener("addTaskButtonClicked", e=>{
+eventHub.addEventListener("saveTaskButtonClicked", e=>{
     const newTask = {
         task: e.detail.task,
         userId: 1,
