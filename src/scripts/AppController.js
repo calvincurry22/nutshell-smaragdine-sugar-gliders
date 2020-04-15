@@ -1,5 +1,7 @@
 // Jon Durr - app controller component that will control the current page state of the app
 
+import { Dashboard } from "./Dashboard.js"
+
 const eventHub = document.querySelector("#container")
 
 export const dispatchStateChangeEvent = () => {
@@ -8,7 +10,20 @@ export const dispatchStateChangeEvent = () => {
     eventHub.dispatchEvent(componentStateChangedEvent)
 }
 
+
 let pageState = "login"
+
+// function to render dashboard if someone is logged in
+export const UserCheck = () => {
+    if (sessionStorage.getItem('userId') === null) {
+        pageState = "login"
+        pageStateChanged()
+    } else {
+        Dashboard()
+        pageState = "dashboard"
+        pageStateChanged()
+    }
+}
 
 eventHub.addEventListener("userWasVerified", event => {
     pageState = "dashboard"
