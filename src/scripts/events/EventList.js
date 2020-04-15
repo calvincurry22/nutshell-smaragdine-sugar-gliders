@@ -1,24 +1,28 @@
 /* This file was written by Parker. This file renders the list of Events to the DOM*/
 
-import { useEvents, deleteEvent } from "./eventsProvider.js"
+import { useEvents, deleteEvent, getEvents } from "./eventsProvider.js"
 import { EventHTML } from "./Event.js"
 
 const eventHub = document.querySelector('#container')
 const contentTarget = document.querySelector('.eventsContainer')
 
+// here
 const render = () => {
-    const events = useEvents()
+    getEvents().then(() => {
+        const events = useEvents()
 
-    const eventHTML = events.map(event => EventHTML(event)).join("")
-    return eventHTML
+        const eventHTML = events.map(event => EventHTML(event)).join("")
+        contentTarget.innerHTML = `
+        ${eventHTML}
+        <button id="addEvent">Add Event</button>
+        `
+    })
 }
 
 export const EventsList = () => {
-    contentTarget.innerHTML = `
-    ${render()}
-    <button id="addEvent">Add Event</button>
-    `
+    render()
 }
+// to here
 
 contentTarget.addEventListener("click", event => {
     if(event.target.id === "addEvent") {
@@ -35,6 +39,6 @@ contentTarget.addEventListener("click", event => {
     }
 })
 
-eventHub.addEventListener("eventStateChanged", event => {
+eventHub.addEventListener("componentStateChanged", event => {
     EventsList()
 })

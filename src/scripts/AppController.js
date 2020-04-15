@@ -10,16 +10,22 @@ export const dispatchStateChangeEvent = () => {
 
 let pageState = "login"
 
-// eventHub.addEventListener("loginButtonClicked", event => {
-//     pageState = "dashboard"
-//     pageStateChanged()
-// })
+eventHub.addEventListener("userWasVerified", event => {
+    pageState = "dashboard"
+    pageStateChanged()
+})
+
+eventHub.addEventListener("logoutButtonClicked", event => {
+    pageState = "login"
+    pageStateChanged()
+})
 
 // whenever page state changed hide all components first with this function
 const hideAllComponents = () => {
     const componentArray = [
         '.loginContainer',
         '.dashboardContainer',
+        '.navBar'
     ]
     componentArray.forEach(component => document.querySelector(component).classList.add("hidden"))
 }
@@ -32,5 +38,6 @@ export const pageStateChanged = () => {
         document.querySelector(".loginContainer").classList.remove("hidden")
     } else if (pageState === "dashboard") {
         document.querySelector(".dashboardContainer").classList.remove("hidden")
+        document.querySelector(".navBar").classList.remove("hidden")
     }
 }

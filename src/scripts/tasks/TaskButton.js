@@ -1,14 +1,20 @@
-
+/*
+    By Yitbarek
+    This component is responsible for html representation of 
+    each tasks
+*/
 const eventHub = document.querySelector("#container")
 const contentTarget = document.querySelector(".saveTaskButtonContainers")
 
 export const Task = () => {
-    contentTarget.innerHTML = `<section>
+    contentTarget.innerHTML = `
+    <section>
         <input type="text" placeholder="task name" id="task">
         <label for="dateToComplete">Date to complete</label>
         <input type="date" id="dateToComplete">
         <button id="saveTask">Add task</button>
-    </section>`
+    </section>
+    `
 }
 
 contentTarget.addEventListener("click", e=>{
@@ -19,7 +25,7 @@ contentTarget.addEventListener("click", e=>{
         const customTaskEvent = new CustomEvent("addTaskButtonClicked",{
             detail: {
                 task:taskName,
-                userId:"",
+                userId: 1,
                 complete:complete,
                 dateToComplete:dateToComplete
             }

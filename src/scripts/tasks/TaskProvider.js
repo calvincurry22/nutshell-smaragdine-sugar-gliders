@@ -1,4 +1,11 @@
+/*
+    By Yitbarek 
+    This component is responsible for managing tasks data
+*/
+import { dispatchStateChangeEvent } from "../AppController.js"
+
 const eventHub = document.querySelector("#container")
+
 let tasks = []
 export const useTasks = () => tasks.slice()
 export const getTasks = () => {
@@ -6,10 +13,8 @@ export const getTasks = () => {
     .then(response => response.json())
     .then(data=>tasks = data)
 }
-export const dispatchEventStateChange = () => {
-    const taskStateChangedEvent = new CustomEvent("taskStateEventChanged")
-    eventHub.dispatchEvent(taskStateChangedEvent) 
-}
+
+
 export const saveTasks = (task) => {
     return fetch('http://localhost:8088/tasks',{
         "method":"POST",
@@ -19,7 +24,7 @@ export const saveTasks = (task) => {
         body: JSON.stringify(task)
     })
     .then(getTasks)
-    .then(dispatchEventStateChange)
+    .then(dispatchStateChangeEvent)
 }
 export const deleteTask = (taskId) => {
     
@@ -27,7 +32,7 @@ export const deleteTask = (taskId) => {
         method:"DELETE",
     })
     .then(getTasks)
-    .then(dispatchEventStateChange)
+    .then(dispatchStateChangeEvent)
 }
 
 
@@ -40,5 +45,5 @@ export const updateTask = (task) => {
         body: JSON.stringify(task)
     })
     .then(getTasks)
-    .then(dispatchEventStateChange)
+    .then(dispatchStateChangeEvent)
 }

@@ -1,4 +1,13 @@
-import { useTasks, saveTasks, deleteTask, updateTask } from "./TaskProvider.js"
+/*
+    By Yitbarek 
+    This component is responsible for displaying all the tasks that are 
+    not complete
+*/
+import { useTasks, saveTasks, deleteTask, updateTask, getTasks } from "./TaskProvider.js"
+import { Task } from "./TaskButton.js"
+
+
+
 const eventHub = document.querySelector("#container")
 const contentTarget = document.querySelector(".userTasksContainer")
 
@@ -12,29 +21,32 @@ eventHub.addEventListener("addTaskButtonClicked", e=>{
     saveTasks(newTask)
 })
 
-const render = (taskObject) => {
-    contentTarget.innerHTML = taskObject.map(individualTask => {
-        if(individualTask.complete !== true)
-        {
-            return `<section>
-            ${                
-                    `<input type = "checkbox" id = "checkbox--${individualTask.id}">
-                    <ul>
-                    <li id = "taskName--${individualTask.id}">Task: ${individualTask.task}</li>
-                    <li id = "taskComplete--${individualTask.id}">Complete: ${individualTask.complete}</li>
-                        <li id = "dateToComplete--${individualTask.id}">Date to complete: ${individualTask.dateToComplete}</li>
-                        </ul>
-                        <button id = "deleteTaskButtonClicked--${individualTask.id}">
-                        Delete</button>`
+const render = () => {
+    getTasks().then(() => {
+        const tasks = useTasks()
+        Task()
+        contentTarget.innerHTML = tasks.map(individualTask => {
+            if(individualTask.complete !== true)
+            {
+                return `<section>
+                ${
+                        `<input type = "checkbox" id = "checkbox--${individualTask.id}">
+                        <ul>
+                        <li id = "taskName--${individualTask.id}">Task: ${individualTask.task}</li>
+                        <li id = "taskComplete--${individualTask.id}">Complete: ${individualTask.complete}</li>
+                            <li id = "dateToComplete--${individualTask.id}">Date to complete: ${individualTask.dateToComplete}</li>
+                            </ul>
+                            <button id = "deleteTaskButtonClicked--${individualTask.id}">
+                            Delete</button>`
+                }
+                    </section>`
             }
-                </section>`
-        }
-    }).join("")
+        }).join("")
+    })
 }
 contentTarget.addEventListener("click", e=>{
     if(e.target.id.startsWith("deleteTaskButtonClicked--")){
         const [_, taskToDelete] = e.target.id.split("--")
-        console.log('clicked ',taskToDelete)
         deleteTask(taskToDelete)
     }
 })
@@ -55,14 +67,13 @@ contentTarget.addEventListener("click", e=>{
             dateToComplete: dateTo_Complete
         }
         updateTask(newTask)
-    }    
+    }   
 })
 
-eventHub.addEventListener("taskStateEventChanged", e=>{
+eventHub.addEventListener("componentStateChanged", event =>{
     TaskList()
 })
 
 export const TaskList = () => {
-    const tasks = useTasks()
-    render(tasks)
+    render()
 }

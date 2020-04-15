@@ -18,8 +18,8 @@ const render = () => {
                 <input type="text" id="eventLocation" name="eventLocation">
             </fieldset>
 
-            <button id="saveEvent">Save Event</button>
         </form>
+        <button id="saveEvent">Save Event</button>
     `
 }
 

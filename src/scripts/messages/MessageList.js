@@ -1,43 +1,46 @@
 // Jon Durr - messages/chat rendering component
 
-import { useMessages } from "./messageProvider.js"
+import { useMessages, getMessages } from "./messageProvider.js"
 import { NewMessageButton } from "./NewMessageButton.js"
 import { Message } from "./Message.js"
+import { useUsers, getUsers } from "../user/userProvider.js"
 
 const eventHub = document.querySelector("#container")
-const messagesContainerTarget = document.querySelector(".messagesContainer")
 
-eventHub.addEventListener("componentStateChanged", event => {
+eventHub.addEventListener("componentStateChanged", e => {
     renderMessages()
 })
 
 export const MessageList = () => {
-    messagesContainerTarget.innerHTML = `
-    <header class="messagesContainer__Header">Chat</header>
-    <section class="messagesContainer__Messages"></section>
-    <input type="text" id="messageText" name="message" onfocus="this.value=''" placeholder="Enter message here">
-    ${NewMessageButton()}
-    `
+    renderMessages()
 }
 
 const renderMessages = () => {
-    const contentTarget = document.querySelector(".messagesContainer__Messages")
-    const messages = useMessages()
-    // const users = useUsers()
-    // const userId = parseInt(sessionStorage.getItem(currentUserId))
-    // const currentUser = users.find(user.id === userId)
-    const currentUser = {
-        id: 1,
-        username: "jondurr",
-        email: "durrjp1@gmail.com",
-        password: "1234"
-    }
+    const promise = Promise.all([
+        getUsers(),
+        getMessages()
+    ])
+    promise.then(() => {
+        const contentTarget = document.querySelector(".messagesContainer")
+        const messages = useMessages()
+        const users = useUsers()
+        const sortedMessages = messages.sort((a,b) => new Date(a.timestamp) - new Date(b.timestamp))
 
-    const sortedMessages = messages.sort((a,b) => new Date(a.timestamp) - new Date(b.timestamp))
-    contentTarget.innerHTML = sortedMessages.map(message => Message(message, currentUser)).join("")
-
+        const messageListHTML = sortedMessages.map(message => {
+            const messagesUser = users.find(user => {
+                return user.id === message.userId
+            })
+            
+            return Message(message, messagesUser)
+        }).join("")
+        contentTarget.innerHTML = `
+        <header>Chat History</header>
+        ${messageListHTML}
+        <div class="messagesHTML">
+            <input type="text" id="messageText" name="message" onfocus="this.value=''" placeholder="Enter message here">
+            ${NewMessageButton()}
+        </div>
+        `
+    })
 }
 
-eventHub.addEventListener("loginButtonClicked", event => {
-    renderMessages()
-})

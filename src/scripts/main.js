@@ -1,12 +1,13 @@
-import { Task } from "./tasks/TaskButton.js";
-import {TaskList} from "./tasks/TaskList.js";
-import { getTasks } from "./tasks/TaskProvider.js";
-import { MessageList } from "./messages/MessageList.js";
-import { getEvents } from "./events/eventsProvider.js";
-import { EventsList } from "./events/EventList.js";
+import { SignInList } from "./login/SignInList.js";
+import "./sessionStorage.js";
+import "./user/userProvider.js";
+import "./registration/RegisterDialog.js";
+import "./registration/SignUpButton.js";
+import "./registration/CloseDialogButton.js";
+import { ArticleDialogButton } from "./articles/ArticleDialogButton.js";
+import "./articles/ArticleDialog.js"
 import "./events/EventDialogButton.js"
+import "./navBar/RenderNavBar.js"
 
-Task()
-getTasks().then(TaskList)
-getEvents().then(EventsList)
-MessageList()
+SignInList()
+ArticleDialogButton()
