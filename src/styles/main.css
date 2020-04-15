@@ -16,3 +16,8 @@
     background: #FCF4DB;
     overflow: hidden;
 }
+
+.dashboardContainer {
+    overflow: scroll;
+    height: 80vh
+}
