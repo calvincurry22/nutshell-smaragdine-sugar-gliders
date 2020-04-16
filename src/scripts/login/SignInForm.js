@@ -39,5 +39,22 @@ eventHub.addEventListener("loginButtonClicked", customEvent => {
         }
     })
     eventHub.dispatchEvent(customLoginEvent)
-
 })
+
+export const keypressListenerLogin = () => {
+    const contentTarget = document.querySelector("#loginPassword");
+    contentTarget.addEventListener("keyup", event => {
+        if (event.keyCode === 13) {
+            const userName = document.querySelector("#loginUserName").value
+            const password = document.querySelector("#loginPassword").value
+            
+            const customLoginEvent = new CustomEvent("loginValidation", {
+                detail: {
+                    user: userName,
+                    validation: password,
+                }
+            })
+            eventHub.dispatchEvent(customLoginEvent)
+        }
+    })
+}

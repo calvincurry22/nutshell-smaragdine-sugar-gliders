@@ -5,7 +5,6 @@ import { saveArticle } from "./ArticlesProvider.js"
 
 const contentTarget = document.querySelector(".dialogContainer")
 
-
 const eventHub = document.querySelector("#container")
 
 export const ArticleDialog = () => {
@@ -20,7 +19,8 @@ export const ArticleDialog = () => {
                 <input type="url" id="article--Url" name="articleUrl"><br><br>
             </form>
             <button id="button--SaveArticle">Save Article</button>
-        </dialog> 
+            <button id="button--closeDialog">Close</button>
+        </dialog>
     `
 }
 
@@ -39,12 +39,14 @@ contentTarget.addEventListener("click", clickEvent => {
         const articleUrl = document.querySelector("#article--Url").value
         const currentDate = Date.now()
         const dialogElement = document.querySelector(".article__Dialog")
+        const currentUserId = parseInt(sessionStorage.getItem("userId"))
+
         const [a, b] = articleUrl.split("//")
 
         if(a === "http:" || a === "https:") {
         
             const newArticle = {
-                userId: 1,
+                userId: currentUserId,
                 url: articleUrl,
                 title: articleTitle,
                 synopsis: articleSynopsis,
@@ -59,3 +61,9 @@ contentTarget.addEventListener("click", clickEvent => {
     }    
 })
 
+contentTarget.addEventListener("click", clickEvent => {
+    if(clickEvent.target.id === "button--closeDialog") {
+        const dialogElement = document.querySelector(".article__Dialog")
+        dialogElement.close()
+    }
+})

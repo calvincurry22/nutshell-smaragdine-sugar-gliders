@@ -36,10 +36,12 @@ contentTarget.addEventListener("click", clickEvent => {
         const eventTitle = document.querySelector("#eventTitle").value
         const date = document.querySelector("#eventDate").value
         const location = document.querySelector("#eventLocation").value
+        const currentUserId = parseInt(sessionStorage.getItem("userId"))
+
 
         // Make a new object representation of a note
         const newEvent = {
-            user: 1,//????
+            user: currentUserId,
             event: eventTitle,
             date: date,
             location: location

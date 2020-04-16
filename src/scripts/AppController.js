@@ -2,6 +2,7 @@
 // check if users are logged in or not
 
 import { Dashboard } from "./Dashboard.js"
+import { keypressListenerLogin } from "./login/SignInForm.js"
 
 const eventHub = document.querySelector("#container")
 
@@ -19,6 +20,7 @@ export const UserCheck = () => {
     if (sessionStorage.getItem('userId') === null) {
         pageState = "login"
         pageStateChanged()
+        keypressListenerLogin()
     } else {
         Dashboard()
         pageState = "dashboard"
@@ -43,7 +45,6 @@ const hideAllComponents = () => {
     const componentArray = [
         '.loginContainer',
         '.dashboardContainer',
-        '.navBar'
     ]
     componentArray.forEach(component => document.querySelector(component).classList.add("hidden"))
 }
@@ -56,6 +57,5 @@ export const pageStateChanged = () => {
         document.querySelector(".loginContainer").classList.remove("hidden")
     } else if (pageState === "dashboard") {
         document.querySelector(".dashboardContainer").classList.remove("hidden")
-        document.querySelector(".navBar").classList.remove("hidden")
     }
 }

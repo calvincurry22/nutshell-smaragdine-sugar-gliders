@@ -3,7 +3,7 @@ const eventHub = document.querySelector("#container")
 
 export const FriendDialogButton = () => {
     return `
-        <button id="button--FindFriend">Find new Friend</button>
+        <button id="button--FindFriend">Find New Friend</button>
     `
 }
 
