@@ -54,12 +54,19 @@
 .event__text {
     margin: 5px 5px 25px 15px;
     flex-basis: 70%;
+    font-size: 0.75em;
+}
+
+.eventTitleDeleteButtonWrapper {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-between;
 }
 
 .event__title {
     font-size: 20px;
     font-weight: 800;
-    text-align: center;
+    margin-left: 15px;
 }
 
 .events__title {
