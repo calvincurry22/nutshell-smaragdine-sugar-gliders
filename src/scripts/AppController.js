@@ -1,6 +1,7 @@
 // Jon Durr - app controller component that will control the current page state of the app
 
 import { Dashboard } from "./Dashboard.js"
+import { keypressListenerLogin } from "./login/SignInForm.js"
 
 const eventHub = document.querySelector("#container")
 
@@ -18,6 +19,7 @@ export const UserCheck = () => {
     if (sessionStorage.getItem('userId') === null) {
         pageState = "login"
         pageStateChanged()
+        keypressListenerLogin()
     } else {
         Dashboard()
         pageState = "dashboard"

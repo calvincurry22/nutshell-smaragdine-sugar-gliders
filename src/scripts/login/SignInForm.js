@@ -41,10 +41,10 @@ eventHub.addEventListener("loginButtonClicked", customEvent => {
     eventHub.dispatchEvent(customLoginEvent)
 })
 
-export const keypressListener = () => {
+export const keypressListenerLogin = () => {
     const contentTarget = document.querySelector("#loginPassword");
     contentTarget.addEventListener("keyup", event => {
-        if (event.keycode === 13) {
+        if (event.keyCode === 13) {
             const userName = document.querySelector("#loginUserName").value
             const password = document.querySelector("#loginPassword").value
             
