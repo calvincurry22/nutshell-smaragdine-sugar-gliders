@@ -63,10 +63,13 @@ eventHub.addEventListener("chatNameClicked", customEvent => {
         const usersArray = useUsers()
         const friendsArray = useFriends()
         const currentUser = parseInt(sessionStorage.getItem('userId'))
+
+        const userFriends = friendsArray.filter(friend => friend.userId === currentUser)
         const foundUser = usersArray.find(user => user.id === parseInt(customEvent.detail.chatUserId))
-        const test = friendsArray.find(friend => friend.friendUserId === foundUser.id)
+        const test = userFriends.find(friend => friend.friendUserId === foundUser.id)
+
         const userCheck = () => {
-            if(test) {
+            if(test !== undefined) {
                 alert("User is already a Friend")
             } else if(foundUser.id === currentUser) {
                 return false
