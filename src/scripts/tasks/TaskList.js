@@ -64,8 +64,8 @@ const render = () => {
                             </div>
                         </div>
                         <div class="task__buttons">
+                        ${individualTask.userId === currentUserId ? `<div class="task__check"><label for="checkbox--${individualTask.id}">Complete:</label><input type = "checkbox" id = "checkbox--${individualTask.id}"></div>`:""}
                         ${individualTask.userId === currentUserId ? `<button id="deleteTaskButtonClicked--${individualTask.id}">x</button>`:""}
-                        ${individualTask.userId === currentUserId ? `<input type = "checkbox" id = "checkbox--${individualTask.id}">`:""}
                         </div>
                         `
                 }

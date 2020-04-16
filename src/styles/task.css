@@ -9,19 +9,27 @@
 }
 
 
-.task__title {
+.task__titleContainer {
     font-weight: 900;
     font-size: 36px;
     color: #CC624E;
-    text-align: center;
+    flex-basis: 100%;
+    display: flex;
+    height: fit-content;
+}
+
+.task__title {
+    flex-basis: 80%;
+    padding-left: 16%;
 }
 
 #showTaskButton {
-    margin-top: 5px;
+    flex-basis: 20%;
     border: none;
     background: #FCF4DB;
     color: #CC624E;
     font-size: 14px;
+    justify-self: left;
 }
 
 #showTaskButton:hover {
@@ -62,6 +70,7 @@
 .task__image {
     flex-basis: 15%;
     margin: 0px 10px;
+    align-self: center;
 }
 
 .task__buttons {
@@ -70,6 +79,21 @@
     justify-content: space-between;
 }
 
-[id^=checkbox--] {
-    margin-right: 10px;
+[id^=deleteTaskButtonClicked--] {
+    border: 1px solid #CC624E;
+    border-radius: 5px;
+    margin-right: 15px;
+    background: #67889D;
+    background-image: linear-gradient(180deg, rgba(255,255,255,0.50) 0%, rgba(255,255,255,0.50) 100%);
+    color: #ffffff;
+    font-weight: 500;
+    margin-bottom: 5px;
+}
+
+[id^=deleteTaskButtonClicked--]:hover {
+    background: #CC624E;
+}
+
+.task__check {
+    margin-left: 10px;
 }
