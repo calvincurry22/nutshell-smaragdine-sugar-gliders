@@ -12,7 +12,6 @@ export const TaskDialog = () => {
     `
 }
 
-
 contentTarget.addEventListener("click", e=>{
     if(e.target.id === 'saveTask'){
         const taskName = document.querySelector("#task").value

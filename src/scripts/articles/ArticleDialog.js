@@ -5,13 +5,11 @@ import { saveArticle } from "./ArticlesProvider.js"
 
 const contentTarget = document.querySelector(".dialogContainer")
 
-
 const eventHub = document.querySelector("#container")
 
 export const ArticleDialog = () => {
     contentTarget.innerHTML = `
         <dialog class="article__Dialog">
-            <button id="button--closeDialog">Close</button>
             <form action="">
                 <label for="articleTitle">Title:</label><br>
                 <input type="text" id="article--Title" name="articleTitle"><br>
@@ -21,6 +19,7 @@ export const ArticleDialog = () => {
                 <input type="url" id="article--Url" name="articleUrl"><br><br>
             </form>
             <button id="button--SaveArticle">Save Article</button>
+            <button id="button--closeDialog">Close</button>
         </dialog>
     `
 }
