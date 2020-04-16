@@ -1,4 +1,4 @@
-import { getFriends, useFriends } from "./FriendsProvider.js"
+import { getFriends, useFriends, saveFriends } from "./FriendsProvider.js"
 import { useUsers, getUsers } from "../user/userProvider.js"
 import { Friend } from "./Friend.js"
 import { FriendDialogButton } from "./FriendDialogButton.js"
@@ -50,4 +50,24 @@ contentTarget.addEventListener("click", clickEvent => {
 
 eventHub.addEventListener("componentStateChanged", e => {
     FriendList()
+})
+
+
+eventHub.addEventListener("chatNameClicked", customEvent => {
+    
+    getUsers().then( () => {
+        const usersArray = useUsers()
+        const currentUser = parseInt(sessionStorage.getItem('userId'))
+        const filteredUsers = usersArray.filter(user => user.id !== currentUser)
+        const foundUser = filteredUsers.find(user => user.id === parseInt(customEvent.detail.chatUserId))
+        const confirmation = confirm(`Add ${foundUser.username} as a friend? Click OK to confirm`)
+        if(confirmation) {
+            let newFriendObject = {
+                userId: currentUser,
+                friendUserId: foundUser.id
+            }
+            saveFriends(newFriendObject)
+        }
+    })
+    
 })
