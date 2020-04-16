@@ -52,7 +52,8 @@ const render = () => {
             {
                 return `<section class="task ${isAFriendClass === true ? 'italicized' : ''}">
                 ${
-                        `<input type = "checkbox" id = "checkbox--${individualTask.id}">
+                        `
+                        ${individualTask.userId === currentUserId ? `<input type = "checkbox" id = "checkbox--${individualTask.id}">`:""}
                         <ul>
                             <li id = "taskName--${individualTask.id}">Task: ${individualTask.task}</li>
                             <li id = "taskComplete--${individualTask.id}">Complete: ${individualTask.complete}</li>
