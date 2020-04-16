@@ -54,20 +54,33 @@ eventHub.addEventListener("componentStateChanged", e => {
 
 
 eventHub.addEventListener("chatNameClicked", customEvent => {
-    
-    getUsers().then( () => {
+    const promise = Promise.all([
+        getUsers(),
+        getFriends()
+    ])
+    promise.then( () => {
         const usersArray = useUsers()
+        const friendsArray = useFriends()
         const currentUser = parseInt(sessionStorage.getItem('userId'))
-        const filteredUsers = usersArray.filter(user => user.id !== currentUser)
-        const foundUser = filteredUsers.find(user => user.id === parseInt(customEvent.detail.chatUserId))
-        const confirmation = confirm(`Add ${foundUser.username} as a friend? Click OK to confirm`)
-        if(confirmation) {
-            let newFriendObject = {
-                userId: currentUser,
-                friendUserId: foundUser.id
+        const foundUser = usersArray.find(user => user.id === parseInt(customEvent.detail.chatUserId))
+        const test = friendsArray.find(friend => friend.friendUserId === foundUser.id)
+        const userCheck = () => {
+            if(test) {
+                alert("User is already a Friend")
+            } else if(foundUser.id === currentUser) {
+                return false
             }
-            saveFriends(newFriendObject)
+            else {
+                const confirmation = confirm(`Add ${foundUser.username} as a friend? Click OK to confirm`)
+                            if(confirmation) {
+                                let newFriendObject = {
+                                    userId: currentUser,
+                                    friendUserId: foundUser.id
+                                }
+                                saveFriends(newFriendObject)
+                            }
+            }
         }
+        userCheck()
     })
-    
 })
