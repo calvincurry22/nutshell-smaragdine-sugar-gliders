@@ -7,7 +7,9 @@
     margin: 0px 40px;
     display: flex;
     flex-wrap: wrap;
-    align-items: flex-start;
+    /* */
+    align-items: center;
+    flex-flow: column nowrap;
 }
 
 .message__title {
@@ -18,7 +20,70 @@
     color: #CC624E;
 }
 
+.message__messageList {
+    overflow-y: auto;
+    width: 600px;
+    display: flex;
+    flex-flow: column nowrap;
+}
+
 .message__new {
     flex-basis: 100%;
     height: 100%;
+}
+
+.messages__message__container {
+    width: 300px;
+    background: #67889D;
+    background-image: linear-gradient(180deg, rgba(255,255,255,0.50) 0%, rgba(255,255,255,0.50) 100%);
+    color: #ffffff;
+    border-radius: 5px;
+    margin-top: 10px;
+    overflow-x: hidden;
+    padding: .5em
+}
+
+.messages__message {
+    width: 100%;
+}
+[id^=newMessageButton] {
+    margin-right: 10px;
+    border: 1px solid #CC624E;
+    background: #67889D;
+    background-image: linear-gradient(180deg, rgba(255,255,255,0.50) 0%, rgba(255,255,255,0.50) 100%);
+    color: #ffffff;
+    font-weight: 500;
+    border-radius: 5px;
+}
+
+[id^=newMessageButton]:hover {
+    background: #CC624E;
+}
+
+[id^=deleteMessageBtn--] {
+    border: 1px solid #CC624E;
+    border-radius: 5px;
+    justify-self: end;
+    margin-right: 15px;
+    background: #67889D;
+    background-image: linear-gradient(180deg, rgba(255,255,255,0.50) 0%, rgba(255,255,255,0.50) 100%);
+    color: #ffffff;
+    font-weight: 500;
+}
+
+[id^=deleteMessageBtn--]:hover {
+    background: #CC624E;
+}
+.message__user {
+    color: #CC624E
+}
+
+/* don't look at me */
+
+.left {
+    float: left
+}
+
+.right {
+    float: right
 }
