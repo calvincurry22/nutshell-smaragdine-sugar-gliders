@@ -2,6 +2,7 @@ import { getFriends, useFriends } from "./FriendsProvider.js"
 import { useUsers, getUsers } from "../user/userProvider.js"
 import { Friend } from "./Friend.js"
 import { FriendDialogButton } from "./FriendDialogButton.js"
+import { deleteFriend } from "./FriendsProvider.js"
 
 
 
@@ -35,6 +36,17 @@ const render = () => {
 export const FriendList = () => {
     render()
 }
+
+contentTarget.addEventListener("click", clickEvent => {
+    if (clickEvent.target.id.startsWith("removeFriendBtn--")) {
+        const friendsArray = useFriends()
+        const [prefix, friendId] = clickEvent.target.id.split("--")
+
+        const foundFriend = friendsArray.find(friend => friend.friendUserId === parseInt(friendId))
+        const foundFriendId = foundFriend.id
+        deleteFriend(foundFriendId)
+    }
+})
 
 eventHub.addEventListener("componentStateChanged", e => {
     FriendList()

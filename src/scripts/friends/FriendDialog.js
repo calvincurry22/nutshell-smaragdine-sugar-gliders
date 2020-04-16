@@ -14,6 +14,8 @@ const contentTarget = document.querySelector(".dialogContainer");
 
 const AddFriendForm = () => {
         const allTheUsers = useUsers();
+        const currentUserId = parseInt(sessionStorage.getItem('userId'))
+        const filteredArrayofUsers = allTheUsers.filter(user => user.id !== currentUserId)
         contentTarget.innerHTML =`
             <dialog class="dialog" id="addFriendForm">
                 <fieldset>
@@ -21,7 +23,7 @@ const AddFriendForm = () => {
                         <select class="dropdown" id="friendDropdown">
                         <option value="0">Select a user</option>
                         ${
-                            allTheUsers.map(singleUser => {
+                            filteredArrayofUsers.map(singleUser => {
                             return `<option value="${singleUser.id}" class="selectOption">${singleUser.username}</option>`
                             }).join("")
                         }
