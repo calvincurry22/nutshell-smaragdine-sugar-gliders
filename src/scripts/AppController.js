@@ -42,7 +42,6 @@ const hideAllComponents = () => {
     const componentArray = [
         '.loginContainer',
         '.dashboardContainer',
-        '.navBar'
     ]
     componentArray.forEach(component => document.querySelector(component).classList.add("hidden"))
 }
