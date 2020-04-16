@@ -6,6 +6,7 @@
 
 import { getUsers, useUsers } from "../user/userProvider.js"
 import { AddFriendButton } from "./AddFriendButton.js"
+import { CloseFriendButton } from "./CloseFriendsButton.js"
 import { saveFriends } from "./FriendsProvider.js"
 
 
@@ -30,23 +31,27 @@ const AddFriendForm = () => {
                         </select>
                     </div>
                     <div ="saveFriendButtonContainer">    
-                        ${AddFriendButton()}          
+                        ${AddFriendButton()}
+                        ${CloseFriendButton()}
                     </div>
                 </fieldset>
             </dialog>`
 }
 
 eventHub.addEventListener("addFriendButtonClicked", customEvent => {
-    const selectedFriendUserId = parseInt(document.querySelector("#friendDropdown").value);
-    const currentUserId = parseInt(sessionStorage.getItem('userId'));
-    
-    let friendObject = {
-        userId: currentUserId,
-        friendUserId: selectedFriendUserId
+    const selectElement = document.querySelector("#friendDropdown").value;
+    if (selectElement !== "0") {
+        const selectedFriendUserId = parseInt(document.querySelector("#friendDropdown").value);
+        const currentUserId = parseInt(sessionStorage.getItem('userId'));
+        
+        let friendObject = {
+            userId: currentUserId,
+            friendUserId: selectedFriendUserId
+        }
+        saveFriends(friendObject);
+        const dialogElement = document.querySelector("#addFriendForm")
+        dialogElement.close()
     }
-    saveFriends(friendObject);
-    const dialogElement = document.querySelector("#addFriendForm")
-    dialogElement.close()
 })
 
 eventHub.addEventListener("findFriendBtnClicked", customEvent => {
@@ -55,4 +60,9 @@ eventHub.addEventListener("findFriendBtnClicked", customEvent => {
         const dialogElement = document.querySelector("#addFriendForm")
         dialogElement.showModal()
     })
+})
+
+eventHub.addEventListener("closeFriendButtonClicked", customEvent => {
+    const dialogElement = document.querySelector("#addFriendForm");
+    dialogElement.close();
 })
