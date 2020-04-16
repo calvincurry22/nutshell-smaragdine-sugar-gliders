@@ -3,6 +3,8 @@
 
 import { Article } from "./Article.js";
 import { useArticles, getArticles } from "./ArticlesProvider.js";
+import { getUsers, useUsers } from "../user/userProvider.js";
+import { getFriends, useFriends } from "../friends/FriendsProvider.js";
 import { deleteArticle } from "./ArticlesProvider.js"
 import { ArticleDialogButton } from "./ArticleDialogButton.js";
 
@@ -20,10 +22,35 @@ export const ArticleList = () => {
 }
 
 const renderArticles = () => {
-    getArticles().then(() => {
+    const promise = Promise.all([
+        getUsers(),
+        getArticles(),
+        getFriends()
+    ])
+    promise.then(() => {
+        const allTheUsers = useUsers()
+        const allTheFriends = useFriends()
         const articleCollection = useArticles()
+        const currentUserId = parseInt(sessionStorage.getItem("userId"))
+
+        const filteredFriends = allTheFriends.filter(friendObj => friendObj.userId === currentUserId)
+        const friends = filteredFriends.map(friend => {
+            return allTheUsers.find(user => user.id === friend.friendUserId)
+        })
+
+        const articleHTML = articleCollection.map(articleObj => {
+            let isAFriendClass = false
+            friends.map(friend => {
+                if (friend.id === articleObj.userId) {
+                    isAFriendClass = true
+                }
+            })
+            const userWhoWroteEvent = allTheUsers.find(user => user.id === articleObj.userId)
+            return Article(articleObj, isAFriendClass, userWhoWroteEvent)
+        }).join("")
+
         contentTarget.innerHTML = `
-        ${articleCollection.map(articleObj => Article(articleObj)).join("")}
+        ${articleHTML}
         ${ArticleDialogButton()}
         `
     })

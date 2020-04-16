@@ -21,3 +21,7 @@
     overflow: scroll;
     height: 80vh
 }
+
+.italicized {
+    font-style: italic
+}
