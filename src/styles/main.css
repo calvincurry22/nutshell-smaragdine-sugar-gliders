@@ -1,6 +1,8 @@
 @import "article.css";
 @import 'navigation.css';
 @import 'login.css';
+@import 'friend.css';
+@import 'message.css';
 
 *{
     font-family: 'Raleway', sans-serif;
@@ -59,14 +61,6 @@ html {
     margin-bottom: 15px;    
     height: 20vh;
     overflow: scroll;
-}
-
-.friendsContainer {
-    flex-basis: 15%;
-    background: #FCF4DB;
-    border: 22px solid #FFAA5C;
-    border-radius: 25px;
-    margin: 15px 0px;
 }
 
 .messagesContainer {

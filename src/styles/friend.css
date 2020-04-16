@@ -1,0 +1,82 @@
+.friendsContainer {
+    flex-basis: 15%;
+    background: #FCF4DB;
+    border: 22px solid #FFAA5C;
+    border-radius: 25px;
+    margin: 15px 0px;
+    height: 51vh;
+    overflow-y: scroll;
+}
+
+.friend__title {
+    font-family: Raleway-Black;
+    font-size: 36px;
+    color: #CC624E;
+    text-align: center;
+}
+
+.friend__Card {
+    background: #67889D;
+    background-image: linear-gradient(180deg, rgba(255,255,255,0.50) 0%, rgba(255,255,255,0.50) 100%);
+    color: #ffffff;
+    border-radius: 20px;
+    display: flex;
+    flex-wrap: nowrap;
+    margin-top: 10px;
+    margin: 10px 10px 0px 5px;
+    overflow-x: hidden;
+}
+
+.friend__image {
+    flex-basis: 20%;
+    margin: 5px 0px 5px 10px;
+}
+
+.friend__text {
+    flex-basis: 80%;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.friend__name {
+    flex-basis: 100%;
+    font-family: Raleway-Black;
+    font-size: 24px;
+    color: #FFFFFF;
+    margin: 0px 5px;
+}
+
+.friend__remove {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    margin-bottom: 5px;
+    margin-right: 2px;
+}
+
+[id^=removeFriendBtn--] {
+    justify-self: flex-end;
+    margin-right: 10px;
+    border: 1px solid #CC624E;
+    background: #67889D;
+    background-image: linear-gradient(180deg, rgba(255,255,255,0.50) 0%, rgba(255,255,255,0.50) 100%);
+    color: #ffffff;
+    font-weight: 500;
+    border-radius: 5px;
+}
+
+[id^=removeFriendBtn--]:hover {
+    background: #CC624E;
+}
+
+#button--FindFriend {
+    margin-top: 5px;
+    border: none;
+    background: #FCF4DB;
+    color: #CC624E;
+    font-size: 14px;
+}
+
+#button--FindFriend:hover {
+    text-decoration: underline;
+}
