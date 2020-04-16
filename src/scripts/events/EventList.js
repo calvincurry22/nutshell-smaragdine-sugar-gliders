@@ -34,7 +34,7 @@ const render = () => {
                 }
             })
             const userWhoWroteEvent = usersCollection.find(user => user.id === event.user)
-            return EventHTML(event, isAFriendClass, userWhoWroteEvent)
+            return EventHTML(event, isAFriendClass, userWhoWroteEvent, currentUserId)
         }).join("")
         contentTarget.innerHTML = `
         ${eventHTML}

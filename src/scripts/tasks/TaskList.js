@@ -59,7 +59,7 @@ const render = () => {
                             <li id = "dateToComplete--${individualTask.id}">Date to complete: ${individualTask.dateToComplete}</li>
                             <li>Posted by: ${userWhoWroteEvent.username}</li>
                         </ul>
-                        <button id = "deleteTaskButtonClicked--${individualTask.id}">x</button>
+                        ${individualTask.userId === currentUserId ? `<button id="deleteTaskButtonClicked--${individualTask.id}">x</button>`:""}
                         `
                 }
                     </section>`

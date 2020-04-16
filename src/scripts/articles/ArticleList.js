@@ -46,7 +46,7 @@ const renderArticles = () => {
                 }
             })
             const userWhoWroteEvent = allTheUsers.find(user => user.id === articleObj.userId)
-            return Article(articleObj, isAFriendClass, userWhoWroteEvent)
+            return Article(articleObj, isAFriendClass, userWhoWroteEvent, currentUserId)
         }).join("")
 
         contentTarget.innerHTML = `
