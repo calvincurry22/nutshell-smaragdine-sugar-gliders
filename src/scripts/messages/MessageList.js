@@ -35,11 +35,13 @@ const renderMessages = () => {
             return Message(message, messagesUser, currentUserId)
         }).join("")
         contentTarget.innerHTML = `
-        <header>Chat History</header>
-        ${messageListHTML}
-        <div class="messagesHTML">
+        <div class= "message__title">Chat History</div>
+        <div class="messages__new">
             <input type="text" id="messageText" name="message" onfocus="this.value=''" placeholder="Enter message here">
             ${NewMessageButton()}
+        </div>
+        <div class="message__messageList">
+        ${messageListHTML}
         </div>
         `
     })

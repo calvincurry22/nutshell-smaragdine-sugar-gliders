@@ -62,12 +62,3 @@ html {
     height: 20vh;
     overflow: scroll;
 }
-
-.messagesContainer {
-    flex-basis: 100%;
-    background: #FCF4DB;
-    border: 22px solid #FFAA5C;
-    border-radius: 25px;
-    height: 20vh;
-    margin: 0px 40px;
-}
