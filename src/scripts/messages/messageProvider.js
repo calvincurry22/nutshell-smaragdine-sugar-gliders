@@ -24,3 +24,11 @@ export const saveMessages = message => {
     .then(getMessages)
     .then(dispatchStateChangeEvent)
 }
+
+export const deleteMessage = id => {
+    return fetch(`http://localhost:8088/messages/${id}`, {
+        method: "DELETE",
+    })
+    .then(getMessages)
+    .then(dispatchStateChangeEvent)
+}
