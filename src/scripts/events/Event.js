@@ -4,7 +4,7 @@ export const EventHTML = (event, isAFriendClass, userWhoWroteEvent, currentUserI
     return `
     <div class="event ${isAFriendClass === true ? 'italicized' : ''}">
         <div class="eventTitleDeleteButtonWrapper">
-            <div class="event__title">${event.event}</div>
+            <div class="event__name">${event.event}</div>
             ${event.user === currentUserId ? `<button id="deleteEventBtn--${event.id}">x</button>`:""}
         </div>
         <div class="textImageWrapper">

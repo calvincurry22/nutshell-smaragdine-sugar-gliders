@@ -41,11 +41,12 @@
 
 .article__imageContainer {
     flex-basis: 10%;
+    display: flex;
 }
 
 .article__image {
-    margin-top: 2rem;
     margin-left: 10px;
+    padding-top: 50%;
 }
 
 .article__text {

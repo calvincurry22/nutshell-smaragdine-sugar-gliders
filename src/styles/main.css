@@ -3,6 +3,7 @@
 @import 'login.css';
 @import 'friend.css';
 @import 'message.css';
+@import 'task.css';
 @import 'event.css';
 
 *{
@@ -44,17 +45,6 @@ html {
     flex-wrap: wrap;
 }
 
-.tasksContainer {
-    flex-basis: 100%;
-    background: #FCF4DB;
-    border: 22px solid #FFAA5C;
-    border-radius: 25px;
-    margin-bottom: 15px;    
-    height: 20vh;
-    overflow: scroll;
-}
-
 .italicized {
     font-style: italic
 }
-
