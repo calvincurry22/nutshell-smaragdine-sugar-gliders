@@ -1,0 +1,24 @@
+.messagesContainer {
+    flex-basis: 100%;
+    background: #FCF4DB;
+    border: 22px solid #FFAA5C;
+    border-radius: 25px;
+    height: 20vh;
+    margin: 0px 40px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+}
+
+.message__title {
+    flex-basis: 100%;
+    text-align: center;
+    font-weight: 900;
+    font-size: 36px;
+    color: #CC624E;
+}
+
+.message__new {
+    flex-basis: 100%;
+    height: 100%;
+}

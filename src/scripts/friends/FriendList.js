@@ -26,8 +26,9 @@ const render = () => {
         })
 
         contentTarget.innerHTML = `
-        ${Friend(friends)}
-        ${FriendDialogButton()}`
+        <div class="friend__title">Friends</div>
+        ${FriendDialogButton()}
+        ${Friend(friends)}`
 
     })
 }

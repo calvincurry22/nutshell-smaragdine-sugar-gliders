@@ -16,15 +16,16 @@ eventHub.addEventListener("componentStateChanged", event => {
 })
 
 export const ArticleList = () => {
-    renderArticles()
+        renderArticles()
 }
 
 const renderArticles = () => {
     getArticles().then(() => {
         const articleCollection = useArticles()
         contentTarget.innerHTML = `
-        ${articleCollection.map(articleObj => Article(articleObj)).join("")}
+        <div class="article__title">News</div>
         ${ArticleDialogButton()}
+        ${articleCollection.map(articleObj => Article(articleObj)).join("")}
         `
     })
 }
