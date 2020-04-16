@@ -1,4 +1,5 @@
-// Jon Durr - app controller component that will control the current page state of the app
+// Jon Durr - app controller component that will control the current page state of the app,
+// check if users are logged in or not
 
 import { Dashboard } from "./Dashboard.js"
 
