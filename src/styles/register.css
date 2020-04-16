@@ -1,0 +1,121 @@
+#registrationForm {
+    background: #FCF4DB;
+    border: 22px solid #FFAA5C;
+    border-radius: 25px;
+    align-self: center;
+    padding: 5em;
+}
+
+#registerUserName{
+    border: none;
+    background-color: #CC624E;
+    height: 45px;
+    width: 100%;
+    font-weight: 900;
+    font-size: 30px;
+    color: #FFFFFF;
+    text-align: center;
+}
+
+#registerUserName::placeholder {
+    font-weight: 900;
+    font-size: 30px;
+    color: #FFFFFF;
+    text-align: center;
+}
+
+#registerEmail{
+    border: none;
+    background-color: #CC624E;
+    height: 45px;
+    width: 100%;
+    font-weight: 900;
+    font-size: 30px;
+    color: #FFFFFF;
+    text-align: center;
+}
+
+#registerEmail::placeholder {
+    font-weight: 900;
+    font-size: 30px;
+    color: #FFFFFF;
+    text-align: center;
+}
+
+#registerPassword{
+    border: none;
+    background-color: #CC624E;
+    height: 45px;
+    width: 100%;
+    font-weight: 900;
+    font-size: 30px;
+    color: #FFFFFF;
+    text-align: center;
+}
+
+#registerPassword::placeholder {
+    font-weight: 900;
+    font-size: 30px;
+    color: #FFFFFF;
+    text-align: center;
+}
+
+#registerPasswordConfirmation{
+    border: none;
+    background-color: #CC624E;
+    height: 45px;
+    width: 100%;
+    font-weight: 900;
+    font-size: 30px;
+    color: #FFFFFF;
+    text-align: center;
+}
+
+#registerPasswordConfirmation::placeholder {
+    font-weight: 900;
+    font-size: 30px;
+    color: #FFFFFF;
+    text-align: center;
+}
+
+#signUpButtonContainer {
+    width: 100%;
+    margin-top: 30px;
+    text-align: left;
+}
+
+#signUpButton {
+    border: none;
+    background-color: #FCF4DB;
+    font-weight: 900;
+    font-size: 48px;
+    padding: 2px 15px;
+    color: #CC624E;
+}
+
+#signUpButton:hover {
+    background: #67889D;
+    background-image: linear-gradient(180deg, rgba(255,255,255,0.50) 0%, rgba(255,255,255,0.50) 100%);
+    border-radius: 25px;
+}
+
+#closeDialogButtonContainer {
+    width: 100%;
+    margin-bottom: 30px;
+    text-align: right;
+}
+
+#closeDialogButton {
+    border: none;
+    background-color: #FCF4DB;
+    font-weight: 900;
+    font-size: 48px;
+    padding: 2px 15px;
+    color: #CC624E;
+}
+
+#closeDialogButton:hover {
+    background: #67889D;
+    background-image: linear-gradient(180deg, rgba(255,255,255,0.50) 0%, rgba(255,255,255,0.50) 100%);
+    border-radius: 25px;
+}

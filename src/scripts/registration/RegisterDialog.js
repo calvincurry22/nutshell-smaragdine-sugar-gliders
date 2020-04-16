@@ -13,27 +13,21 @@ const contentTarget = document.querySelector(".dialogContainer");
 export const RegisterForm = () => {
     contentTarget.innerHTML =`
         <dialog class="dialog" id="registrationForm">
-            <fieldset>
-                <div id="closeButtonContainer">
-                    ${CloseDialog()}
-                </div>
-                <form>
-                    <label class="label label--registration" for="registerEmail">Enter Email:</label>
-                    <input type="email" id="registerEmail" required /></br>
+            <div id="closeDialogButtonContainer">
+                ${CloseDialog()}
+            </div>
+            <form>
+                <input type="email" id="registerEmail" onfocus="this.value=''" placeholder="Email" required /></br>
 
-                    <label class="label label--registration" for="registerUserName">Enter Desired User Name:</label>
-                    <input type="text" id="registerUserName" required /></br>
+                <input type="text" id="registerUserName" onfocus="this.value=''" placeholder="Desired User Name" required /></br>
 
-                    <label class="label label--registration" for="registerPassword">Enter Password:</label>
-                    <input type="password" id="registerPassword" required /></br>
+                <input type="password" id="registerPassword" onfocus="this.value=''" placeholder="Enter Password" required /></br>
 
-                    <label class="label label--registration" for="registerPasswordConfirmation">Re-Enter Password:</label>
-                    <input type="password" id="registerPasswordConfirmation" required /></br>
-                </form>
-                <div id="signUpButtonContainer">
-                    ${SignUpButton()}
-                </div>
-            </fieldset>
+                <input type="password" id="registerPasswordConfirmation" onfocus="this.value=''" placeholder="Re-Enter Password" required /></br>
+            </form>
+            <div id="signUpButtonContainer">
+                ${SignUpButton()}
+            </div>
         </dialog>
         `
 }
