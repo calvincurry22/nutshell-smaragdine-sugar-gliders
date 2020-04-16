@@ -10,6 +10,11 @@
     display: none;
 }
 
+html {
+    height: 100vh;
+    width: 100vw;
+}
+
 #container {
     height: 100vh;
     width: 100vw;
@@ -18,6 +23,65 @@
 }
 
 .dashboardContainer {
+    height: 85vh;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.topContainer {
+    flex-basis: 100%;
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-evenly;
+}
+
+.articlesContainer {
+    flex-basis: 15%;
+    background: #FCF4DB;
+    border: 22px solid #FFAA5C;
+    border-radius: 25px;
+    margin: 15px 0px;
+}
+
+.eventTaskContainer {
+    flex-basis: 40%;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.eventsContainer {
+    flex-basis: 100%;
+    background: #FCF4DB;
+    border: 22px solid #FFAA5C;
+    border-radius: 25px;
+    margin: 20px 0 10px 0;
+    height: 20vh;
     overflow: scroll;
-    height: 80vh
+}
+
+.tasksContainer {
+    flex-basis: 100%;
+    background: #FCF4DB;
+    border: 22px solid #FFAA5C;
+    border-radius: 25px;
+    margin-bottom: 15px;    
+    height: 20vh;
+    overflow: scroll;
+}
+
+.friendsContainer {
+    flex-basis: 15%;
+    background: #FCF4DB;
+    border: 22px solid #FFAA5C;
+    border-radius: 25px;
+    margin: 15px 0px;
+}
+
+.messagesContainer {
+    flex-basis: 100%;
+    background: #FCF4DB;
+    border: 22px solid #FFAA5C;
+    border-radius: 25px;
+    height: 20vh;
+    margin: 0px 40px;
 }
