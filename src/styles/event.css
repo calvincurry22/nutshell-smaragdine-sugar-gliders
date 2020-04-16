@@ -21,6 +21,7 @@
     background: #FCF4DB;
     color: #CC624E;
     font-size: 14px;
+    flex-basis: 20%;
 }
 
 #addEvent:hover {
@@ -63,23 +64,31 @@
     justify-content: space-between;
 }
 
-.event__title {
+.event__name {
     font-size: 20px;
     font-weight: 800;
     margin-left: 15px;
+    flex-basis: 80%;
 }
 
-.events__title {
+.events__titleContainer {
     font-weight: 900;
     font-size: 36px;
     color: #CC624E;
-    text-align: center;
+    flex-basis: 100%;
+    display: flex;
+}
+
+.event__title {
+    flex-basis: 80%;
+    padding-left: 25%;
 }
 
 [id^=deleteEventBtn--] {
     border: 1px solid #CC624E;
     border-radius: 5px;
     justify-self: end;
+    margin-top: 5px;
     margin-right: 15px;
     background: #67889D;
     background-image: linear-gradient(180deg, rgba(255,255,255,0.50) 0%, rgba(255,255,255,0.50) 100%);
