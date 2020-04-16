@@ -18,7 +18,7 @@ eventHub.addEventListener("componentStateChanged", event => {
 })
 
 export const ArticleList = () => {
-    renderArticles()
+        renderArticles()
 }
 
 const renderArticles = () => {
@@ -50,8 +50,9 @@ const renderArticles = () => {
         }).join("")
 
         contentTarget.innerHTML = `
-        ${articleHTML}
+        <div class="article__title">News</div>
         ${ArticleDialogButton()}
+        ${articleHTML}
         `
     })
 }

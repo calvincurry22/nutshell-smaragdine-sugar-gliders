@@ -1,13 +1,20 @@
 @import "article.css";
 @import 'navigation.css';
 @import 'login.css';
+@import 'friend.css';
+@import 'message.css';
 
 *{
-    font-family: Raleway;
+    font-family: 'Raleway', sans-serif;
 }
 
 .hidden {
     display: none;
+}
+
+html {
+    height: 100vh;
+    width: 100vw;
 }
 
 #container {
@@ -18,10 +25,45 @@
 }
 
 .dashboardContainer {
+    height: 85vh;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.topContainer {
+    flex-basis: 100%;
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-evenly;
+}
+
+.eventTaskContainer {
+    flex-basis: 40%;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.eventsContainer {
+    flex-basis: 100%;
+    background: #FCF4DB;
+    border: 22px solid #FFAA5C;
+    border-radius: 25px;
+    margin: 20px 0 10px 0;
+    height: 20vh;
     overflow: scroll;
-    height: 80vh
+}
+
+.tasksContainer {
+    flex-basis: 100%;
+    background: #FCF4DB;
+    border: 22px solid #FFAA5C;
+    border-radius: 25px;
+    margin-bottom: 15px;    
+    height: 20vh;
+    overflow: scroll;
 }
 
 .italicized {
     font-style: italic
 }
+

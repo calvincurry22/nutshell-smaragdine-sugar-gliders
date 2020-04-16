@@ -77,6 +77,7 @@ eventHub.addEventListener("registerButtonClicked", customEvent => {
     RegisterForm();
     const dialog = document.querySelector("#registrationForm");
     dialog.showModal();
+    registrationKeypressListener()
     
 })
 
@@ -84,3 +85,43 @@ eventHub.addEventListener("closeButtonClicked", customEvent => {
     const dialog = document.querySelector("#registrationForm");
     dialog.close();
 })
+
+const registrationKeypressListener = () => {
+    const contentTarget = document.querySelector("#registrationForm");
+    contentTarget.addEventListener("keyup", event => {
+        if (event.keyCode === 13) {
+            const password = document.querySelector("#registerPassword").value
+            const passwordConfirmation = document.querySelector("#registerPasswordConfirmation").value
+            if ( password === passwordConfirmation && password !== "") {
+                const userName = document.querySelector("#registerUserName").value;
+                const email = document.querySelector("#registerEmail").value;
+
+                const validationFuntion = () => {
+                    const customLoginEvent = new CustomEvent("loginValidation", {
+                        detail: {
+                            user: userName,
+                            validation: password,
+                        }
+                    })
+                    eventHub.dispatchEvent(customLoginEvent)
+                }
+
+                const newUser = {
+                    "username": userName,
+                    "email": email,
+                    "password": password
+                }
+                addUser(newUser)
+                    .then(validationFuntion)
+
+                    
+                const dialog = document.querySelector("#registrationForm");
+                dialog.close();
+            } else if (password !== passwordConfirmation) {
+                alert("Re-entered password does not match initial password.")
+            } else {
+                alert("Please fill out required fields")
+            }
+        }
+    })
+}
