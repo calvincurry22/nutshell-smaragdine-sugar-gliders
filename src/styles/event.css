@@ -1,0 +1,92 @@
+.eventsContainer {
+    flex-basis: 100%;
+    background: #FCF4DB;
+    border: 22px solid #FFAA5C;
+    border-radius: 25px;
+    margin: 20px 0 10px 0;
+    height: 20vh;
+    overflow: scroll;
+    padding: 5px;
+}
+
+#eventsCardsContainer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+#addEvent{
+    margin-top: 5px;
+    border: none;
+    background: #FCF4DB;
+    color: #CC624E;
+    font-size: 14px;
+}
+
+#addEvent:hover {
+    text-decoration: underline;
+}
+
+.event {
+    background: #67889D;
+    background-image: linear-gradient(180deg, rgba(255,255,255,0.50) 0%, rgba(255,255,255,0.50) 100%);
+    color: #ffffff;
+    border-radius: 20px;
+    margin-top: 10px;
+    overflow-x: hidden;
+    width: 45%;
+}
+
+.textImageWrapper {
+    display: flex;
+    flex-wrap: nowrap;
+}
+
+.event__image {
+    margin-top: 5px;
+    margin-right: 10px;
+}
+
+.event__imageContainer {
+    flex-basis: 10%;
+}
+
+.event__text {
+    margin: 5px 5px 25px 15px;
+    flex-basis: 70%;
+    font-size: 0.75em;
+}
+
+.eventTitleDeleteButtonWrapper {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+}
+
+.event__title {
+    font-size: 20px;
+    font-weight: 800;
+    margin-left: 15px;
+}
+
+.events__title {
+    font-weight: 900;
+    font-size: 36px;
+    color: #CC624E;
+    text-align: center;
+}
+
+[id^=deleteEventBtn--] {
+    border: 1px solid #CC624E;
+    border-radius: 5px;
+    justify-self: end;
+    margin-right: 15px;
+    background: #67889D;
+    background-image: linear-gradient(180deg, rgba(255,255,255,0.50) 0%, rgba(255,255,255,0.50) 100%);
+    color: #ffffff;
+    font-weight: 500;
+}
+
+[id^=deleteEventBtn--]:hover {
+    background: #CC624E;
+}
