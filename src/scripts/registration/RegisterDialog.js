@@ -3,7 +3,7 @@
 * This module holds an HTML representation of a registration form in a dialog box.
 */
 
-import { addUser } from "../user/userProvider.js";
+import { addUser, useUsers, getUsers } from "../user/userProvider.js";
 import { SignUpButton } from "./SignUpButton.js";
 import { CloseDialog } from "./CloseDialogButton.js";
 
@@ -33,38 +33,46 @@ export const RegisterForm = () => {
 }
 
 eventHub.addEventListener("signUpButtonClicked", customEvent => {
+    getUsers().then(() => {
     const password = document.querySelector("#registerPassword").value
     const passwordConfirmation = document.querySelector("#registerPasswordConfirmation").value
-    if ( password === passwordConfirmation && password !== "") {
-        const userName = document.querySelector("#registerUserName").value;
-        const email = document.querySelector("#registerEmail").value;
+    const userName = document.querySelector("#registerUserName").value;
+    const email = document.querySelector("#registerEmail").value;
 
-        const validationFuntion = () => {
-            const customLoginEvent = new CustomEvent("loginValidation", {
-                detail: {
-                    user: userName,
-                    validation: password,
-                }
-            })
-            eventHub.dispatchEvent(customLoginEvent)
+    if ( password === passwordConfirmation && password !== "" && userName !== "" && email !== "") {
+        const allTheUsers = useUsers();
+        let foundUser = allTheUsers.find(u => u.username === userName)
+        if (foundUser) {
+            alert("Username already exists. Please choose another.")
+        } else {
+            const validationFuntion = () => {
+                const customLoginEvent = new CustomEvent("loginValidation", {
+                    detail: {
+                        user: userName,
+                        validation: password,
+                    }
+                })
+                eventHub.dispatchEvent(customLoginEvent)
+            }
+    
+            const newUser = {
+                "username": userName,
+                "email": email,
+                "password": password
+            }
+            addUser(newUser)
+                .then(validationFuntion)
+    
+                    
+            const dialog = document.querySelector("#registrationForm");
+            dialog.close();
         }
-
-        const newUser = {
-            "username": userName,
-            "email": email,
-            "password": password
+        } else if (password !== passwordConfirmation) {
+            alert("Re-entered password does not match initial password.")
+        } else {
+            alert("Please fill out required fields")
         }
-        addUser(newUser)
-            .then(validationFuntion)
-
-            
-        const dialog = document.querySelector("#registrationForm");
-        dialog.close();
-    } else if (password !== passwordConfirmation) {
-        alert("Re-entered password does not match initial password.")
-    } else {
-        alert("Please fill out required fields")
-    }
+    })
 })
 
 eventHub.addEventListener("registerButtonClicked", customEvent => {
@@ -81,41 +89,52 @@ eventHub.addEventListener("closeButtonClicked", customEvent => {
 })
 
 const registrationKeypressListener = () => {
+    getUsers().then(() => {
     const contentTarget = document.querySelector("#registrationForm");
     contentTarget.addEventListener("keyup", event => {
         if (event.keyCode === 13) {
             const password = document.querySelector("#registerPassword").value
             const passwordConfirmation = document.querySelector("#registerPasswordConfirmation").value
-            if ( password === passwordConfirmation && password !== "") {
-                const userName = document.querySelector("#registerUserName").value;
-                const email = document.querySelector("#registerEmail").value;
+            const userName = document.querySelector("#registerUserName").value;
+            const email = document.querySelector("#registerEmail").value;
 
-                const validationFuntion = () => {
-                    const customLoginEvent = new CustomEvent("loginValidation", {
-                        detail: {
-                            user: userName,
-                            validation: password,
-                        }
-                    })
-                    eventHub.dispatchEvent(customLoginEvent)
-                }
+            if ( password === passwordConfirmation && password !== "" && userName !== "" && email !== "") {
+                const allTheUsers = useUsers();
+                let foundUser = allTheUsers.find(u => u.username === userName)
+                if (foundUser) {
+                    alert("Username already exists. Please choose another.")
+                } else {
+                    const userName = document.querySelector("#registerUserName").value;
+                    const email = document.querySelector("#registerEmail").value;
 
-                const newUser = {
-                    "username": userName,
-                    "email": email,
-                    "password": password
-                }
-                addUser(newUser)
-                    .then(validationFuntion)
+                    const validationFuntion = () => {
+                        const customLoginEvent = new CustomEvent("loginValidation", {
+                            detail: {
+                                user: userName,
+                                validation: password,
+                            }
+                        })
+                        eventHub.dispatchEvent(customLoginEvent)
+                    }
+
+                    const newUser = {
+                        "username": userName,
+                        "email": email,
+                        "password": password
+                    }
+                    addUser(newUser)
+                        .then(validationFuntion)
 
                     
-                const dialog = document.querySelector("#registrationForm");
-                dialog.close();
+                    const dialog = document.querySelector("#registrationForm");
+                    dialog.close();
+                }
             } else if (password !== passwordConfirmation) {
                 alert("Re-entered password does not match initial password.")
             } else {
                 alert("Please fill out required fields")
             }
         }
+    })
     })
 }

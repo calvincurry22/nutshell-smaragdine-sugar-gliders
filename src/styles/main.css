@@ -64,7 +64,9 @@ html {
     overflow: scroll;
 }
 
-.italicized {
-    font-style: italic
+.friend {
+    font-style: italic;
+    background: cornsilk;
+    border: solid black;
+    color: black;
 }
-

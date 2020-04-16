@@ -50,7 +50,7 @@ const render = () => {
             const userWhoWroteEvent = usersCollection.find(user => user.id === individualTask.userId)
             if(individualTask.complete !== true)
             {
-                return `<section class="task ${isAFriendClass === true ? 'italicized' : ''}">
+                return `<section class="task ${isAFriendClass === true ? 'friend' : ''}">
                 ${
                         `
                         ${individualTask.userId === currentUserId ? `<input type = "checkbox" id = "checkbox--${individualTask.id}">`:""}

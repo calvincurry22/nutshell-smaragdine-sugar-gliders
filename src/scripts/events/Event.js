@@ -2,7 +2,7 @@
 
 export const EventHTML = (event, isAFriendClass, userWhoWroteEvent, currentUserId) => {
     return `
-    <div class="event ${isAFriendClass === true ? 'italicized' : ''}">
+    <div class="event ${isAFriendClass === true ? 'friend' : ''}">
         <div class="event__title">${event.event}</div>
         <div class="event__detail">${event.date}</div>
         <div class="event__detail">${event.location}</div>
