@@ -78,6 +78,7 @@ eventHub.addEventListener("registerButtonClicked", customEvent => {
     RegisterForm();
     const dialog = document.querySelector("#registrationForm");
     dialog.showModal();
+    registrationKeypressListener()
     
 })
 
@@ -86,8 +87,8 @@ eventHub.addEventListener("closeButtonClicked", customEvent => {
     dialog.close();
 })
 
-export const keypressListenerRegistration = () => {
-    const contentTarget = document.querySelector("#registerPasswordConfirmation");
+const registrationKeypressListener = () => {
+    const contentTarget = document.querySelector("#registrationForm");
     contentTarget.addEventListener("keyup", event => {
         if (event.keyCode === 13) {
             const password = document.querySelector("#registerPassword").value
