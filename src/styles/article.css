@@ -1,7 +1,84 @@
+.articlesContainer {
+    flex-basis: 15%;
+    background: #FCF4DB;
+    border: 22px solid #FFAA5C;
+    border-radius: 25px;
+    margin: 15px 0px;
+    overflow: scroll;
+    padding: 0px 15px;
+    height: 51vh;
+}
 
+
+.article__title {
+    font-family: Raleway-Black;
+    font-size: 36px;
+    color: #CC624E;
+    text-align: center;
+}
+
+#button--AddArticle{
+    margin-top: 5px;
+    border: none;
+    background: #FCF4DB;
+    color: #CC624E;
+    font-size: 14px;
+}
+
+#button--AddArticle:hover {
+    text-decoration: underline;
+}
 
 .article__Card {
-    border: 1px solid lightgray;
+    background: #67889D;
+    background-image: linear-gradient(180deg, rgba(255,255,255,0.50) 0%, rgba(255,255,255,0.50) 100%);
+    color: #ffffff;
+    border-radius: 20px;
     display: flex;
-    flex-direction: column;
+    flex-wrap: nowrap;
+    margin-top: 10px;
+}
+
+.article__imageContainer {
+    flex-basis: 10%;
+}
+
+.article__image {
+    margin-top: 2rem;
+    margin-left: 10px;
+}
+
+.article__text {
+    margin: 5px 5px 0px 15px;
+    flex-basis: 70%;
+}
+
+.article__name {
+    font-weight: 800;
+}
+
+.article__linkDelete{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 5px;
+}
+
+.article__link {
+    font-size: 12px;
+    color: #CC624E;
+}
+
+[id^=deleteArticleBtn--] {
+    border: 1px solid #CC624E;
+    border-radius: 5px;
+    justify-self: end;
+    margin-right: 15px;
+    background: #67889D;
+    background-image: linear-gradient(180deg, rgba(255,255,255,0.50) 0%, rgba(255,255,255,0.50) 100%);
+    color: #ffffff;
+    font-weight: 500;
+}
+
+[id^=deleteArticleBtn--]:hover {
+    background: #CC624E;
 }

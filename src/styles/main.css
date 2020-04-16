@@ -3,7 +3,7 @@
 @import 'login.css';
 
 *{
-    font-family: Raleway;
+    font-family: 'Raleway', sans-serif;
 }
 
 .hidden {
@@ -33,14 +33,6 @@ html {
     display: flex;
     flex-wrap: nowrap;
     justify-content: space-evenly;
-}
-
-.articlesContainer {
-    flex-basis: 15%;
-    background: #FCF4DB;
-    border: 22px solid #FFAA5C;
-    border-radius: 25px;
-    margin: 15px 0px;
 }
 
 .eventTaskContainer {

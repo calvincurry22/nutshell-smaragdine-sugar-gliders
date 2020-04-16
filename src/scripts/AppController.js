@@ -54,6 +54,5 @@ export const pageStateChanged = () => {
         document.querySelector(".loginContainer").classList.remove("hidden")
     } else if (pageState === "dashboard") {
         document.querySelector(".dashboardContainer").classList.remove("hidden")
-        document.querySelector(".navBar").classList.remove("hidden")
     }
 }
