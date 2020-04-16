@@ -14,10 +14,10 @@ export const TaskDialog = () => {
 
 
 contentTarget.addEventListener("click", e=>{
-    const taskName = document.querySelector("#task").value
-    const dateToComplete = document.querySelector("#dateToComplete").value
-    const complete = false
     if(e.target.id === 'saveTask'){
+        const taskName = document.querySelector("#task").value
+        const dateToComplete = document.querySelector("#dateToComplete").value
+        const complete = false
         const customTaskEvent = new CustomEvent("saveTaskButtonClicked",{
             detail: {
                 task:taskName,
@@ -27,5 +27,7 @@ contentTarget.addEventListener("click", e=>{
             }
         })
         eventHub.dispatchEvent(customTaskEvent)
+        const dialogContainer = document.querySelector("#taskDialog")
+        dialogContainer.close()
     }
 })

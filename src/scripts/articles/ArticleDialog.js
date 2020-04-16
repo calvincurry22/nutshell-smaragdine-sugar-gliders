@@ -11,6 +11,7 @@ const eventHub = document.querySelector("#container")
 export const ArticleDialog = () => {
     contentTarget.innerHTML = `
         <dialog class="article__Dialog">
+            <button id="button--closeDialog">Close</button>
             <form action="">
                 <label for="articleTitle">Title:</label><br>
                 <input type="text" id="article--Title" name="articleTitle"><br>
@@ -20,7 +21,7 @@ export const ArticleDialog = () => {
                 <input type="url" id="article--Url" name="articleUrl"><br><br>
             </form>
             <button id="button--SaveArticle">Save Article</button>
-        </dialog> 
+        </dialog>
     `
 }
 
@@ -59,3 +60,9 @@ contentTarget.addEventListener("click", clickEvent => {
     }    
 })
 
+contentTarget.addEventListener("click", clickEvent => {
+    if(clickEvent.target.id === "button--closeDialog") {
+        const dialogElement = document.querySelector(".article__Dialog")
+        dialogElement.close()
+    }
+})
