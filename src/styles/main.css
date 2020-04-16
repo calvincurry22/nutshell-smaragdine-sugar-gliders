@@ -62,3 +62,8 @@ html {
     height: 20vh;
     overflow: scroll;
 }
+
+.italicized {
+    font-style: italic
+}
+

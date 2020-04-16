@@ -39,12 +39,14 @@ contentTarget.addEventListener("click", clickEvent => {
         const articleUrl = document.querySelector("#article--Url").value
         const currentDate = Date.now()
         const dialogElement = document.querySelector(".article__Dialog")
+        const currentUserId = parseInt(sessionStorage.getItem("userId"))
+
         const [a, b] = articleUrl.split("//")
 
         if(a === "http:" || a === "https:") {
         
             const newArticle = {
-                userId: 1,
+                userId: currentUserId,
                 url: articleUrl,
                 title: articleTitle,
                 synopsis: articleSynopsis,

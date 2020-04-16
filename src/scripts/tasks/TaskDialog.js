@@ -16,11 +16,12 @@ contentTarget.addEventListener("click", e=>{
     if(e.target.id === 'saveTask'){
         const taskName = document.querySelector("#task").value
         const dateToComplete = document.querySelector("#dateToComplete").value
+        const currentUserId = parseInt(sessionStorage.getItem("userId"))
         const complete = false
         const customTaskEvent = new CustomEvent("saveTaskButtonClicked",{
             detail: {
                 task:taskName,
-                userId: 1,
+                userId: currentUserId,
                 complete:complete,
                 dateToComplete:dateToComplete
             }
