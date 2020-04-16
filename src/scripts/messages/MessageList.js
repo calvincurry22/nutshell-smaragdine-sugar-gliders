@@ -1,6 +1,6 @@
 // Jon Durr - messages/chat rendering component
 
-import { useMessages, getMessages } from "./messageProvider.js"
+import { useMessages, getMessages, deleteMessage } from "./messageProvider.js"
 import { NewMessageButton } from "./NewMessageButton.js"
 import { Message } from "./Message.js"
 import { useUsers, getUsers } from "../user/userProvider.js"
@@ -24,6 +24,7 @@ const renderMessages = () => {
         const contentTarget = document.querySelector(".messagesContainer")
         const messages = useMessages()
         const users = useUsers()
+        const currentUserId = parseInt(sessionStorage.getItem("userId"))
         const sortedMessages = messages.sort((a,b) => new Date(a.timestamp) - new Date(b.timestamp))
 
         const messageListHTML = sortedMessages.map(message => {
@@ -31,7 +32,7 @@ const renderMessages = () => {
                 return user.id === message.userId
             })
             
-            return Message(message, messagesUser)
+            return Message(message, messagesUser, currentUserId)
         }).join("")
         contentTarget.innerHTML = `
         <header>Chat History</header>
@@ -43,4 +44,11 @@ const renderMessages = () => {
         `
     })
 }
+
+eventHub.addEventListener("click", clickEvent => {
+    if (clickEvent.target.id.startsWith("deleteMessageBtn--")) {
+        const [prefix, messageId] = clickEvent.target.id.split("--")
+        deleteMessage(messageId)
+    }
+})
 
