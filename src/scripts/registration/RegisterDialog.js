@@ -11,7 +11,6 @@ const eventHub = document.querySelector("#container");
 const contentTarget = document.querySelector(".dialogContainer");
 
 export const RegisterForm = () => {
-    contentTarget.innerHTML ="";
     contentTarget.innerHTML =`
         <dialog class="dialog" id="registrationForm">
             <fieldset>
