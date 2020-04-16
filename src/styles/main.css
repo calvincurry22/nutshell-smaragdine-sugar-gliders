@@ -3,6 +3,7 @@
 @import 'login.css';
 @import 'friend.css';
 @import 'message.css';
+@import 'event.css';
 
 *{
     font-family: 'Raleway', sans-serif;
@@ -41,16 +42,6 @@ html {
     flex-basis: 40%;
     display: flex;
     flex-wrap: wrap;
-}
-
-.eventsContainer {
-    flex-basis: 100%;
-    background: #FCF4DB;
-    border: 22px solid #FFAA5C;
-    border-radius: 25px;
-    margin: 20px 0 10px 0;
-    height: 20vh;
-    overflow: scroll;
 }
 
 .tasksContainer {
