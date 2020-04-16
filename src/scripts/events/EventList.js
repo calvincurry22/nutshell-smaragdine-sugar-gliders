@@ -37,8 +37,11 @@ const render = () => {
             return EventHTML(event, isAFriendClass, userWhoWroteEvent, currentUserId)
         }).join("")
         contentTarget.innerHTML = `
-        ${eventHTML}
-        <button id="addEvent">Add Event</button>
+        <div class="events__title">Events</div>
+        <button id="addEvent"> +Add Event</button>
+        <div id="eventsCardsContainer">
+            ${eventHTML}
+        </div>
         `
     })
 }
