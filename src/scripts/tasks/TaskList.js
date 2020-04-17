@@ -51,17 +51,23 @@ const render = () => {
             const userWhoWroteEvent = usersCollection.find(user => user.id === individualTask.userId)
             if(individualTask.complete !== true)
             {
-                return `<section class="task ${isAFriendClass === true ? 'italicized' : ''}">
+                return `
+                <section class="task ${isAFriendClass === true ? 'italicized' : ''}">
                 ${
                         `
-                        ${individualTask.userId === currentUserId ? `<input type = "checkbox" id = "checkbox--${individualTask.id}">`:""}
-                        <ul>
-                            <li id = "taskName--${individualTask.id}">Task: ${individualTask.task}</li>
-                            <li id = "taskComplete--${individualTask.id}">Complete: ${individualTask.complete}</li>
-                            <li id = "dateToComplete--${individualTask.id}">Date to complete: ${individualTask.dateToComplete}</li>
-                            <li>Posted by: ${userWhoWroteEvent.username}</li>
-                        </ul>
+                        <div class="task__name" id="taskName--${individualTask.id}">${individualTask.task}</div>
+                        <div class="task__textImage">
+                            <div class="task__image"><img src="../../styles/images/tick.svg"></div>
+                            <div class="task__text">
+                                <div class="task__complete" id="taskComplete--${individualTask.id}">Complete: ${individualTask.complete}</div>
+                                <div class="task__date" id="dateToComplete--${individualTask.id}">Finish by: ${individualTask.dateToComplete}</div>
+                                <div class="task__user">Posted by: ${userWhoWroteEvent.username}</div>
+                            </div>
+                        </div>
+                        <div class="task__buttons">
+                        ${individualTask.userId === currentUserId ? `<div class="task__check"><label for="checkbox--${individualTask.id}">Complete:</label><input type = "checkbox" id = "checkbox--${individualTask.id}"></div>`:""}
                         ${individualTask.userId === currentUserId ? `<button id="deleteTaskButtonClicked--${individualTask.id}">x</button>`:""}
+                        </div>
                         `
                 }
                     </section>`

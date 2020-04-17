@@ -4,7 +4,8 @@ import { Friend } from "./Friend.js"
 import { FriendDialogButton } from "./FriendDialogButton.js"
 import { deleteFriend } from "./FriendsProvider.js"
 
-
+// Author: Calvin Curry 
+// This module is responsible for Rendering data in the FriendList component when friends are added
 
 const contentTarget = document.querySelector(".friendsContainer")
 const eventHub = document.querySelector("#container")
@@ -28,7 +29,8 @@ const render = () => {
         contentTarget.innerHTML = `
         <div class="friend__title">Friends</div>
         ${FriendDialogButton()}
-        ${Friend(friends)}`
+        ${Friend(friends)}
+        `
 
     })
 }

@@ -23,8 +23,7 @@ const AddFriendForm = () => {
             return (allThefriends.find(friend => friend.friendUserId === user.id)) ? false : true;
         })
         
-       console.log(allThefriends)
-       console.log(usersMinusCurrentUser)
+       
     
         contentTarget.innerHTML =`
             <dialog class="dialog" id="addFriendForm">

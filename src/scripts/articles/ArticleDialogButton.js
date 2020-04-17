@@ -8,7 +8,7 @@ const eventHub = document.querySelector("#container")
 // here
 export const ArticleDialogButton = () => {
     return `
-        <button id="button--AddArticle"> +Add New Article</button>
+        <button id="button--AddArticle">+Add New Article</button>
     `
 }
 
