@@ -5,7 +5,7 @@ export const Message = (message, messagesUser, currentUserId) => {
     return `
     
     <div class="messages__message  ">
-        <div class="messages__message__container ${message.userId === currentUserId ? 'left':'right'}">
+        <div class="messages__message__container ${message.userId === currentUserId ? 'right':'left'}">
             <div><span class="message__user" id="chatName--${messagesUser.id}">${messagesUser.username}</span>: ${message.messageText}</div>
             ${message.userId === currentUserId ? `<button id="deleteMessageBtn--${message.id}">x</button>`:""}
         </div>

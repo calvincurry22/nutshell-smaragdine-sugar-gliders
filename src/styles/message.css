@@ -85,5 +85,6 @@
 }
 
 .right {
-    float: right
+    float: right;
+    background: skyblue;
 }
