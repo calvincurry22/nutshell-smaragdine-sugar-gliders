@@ -48,6 +48,10 @@
     margin-top: 50px;
 }
 
+#task::placeholder {
+    color: #FFFFFF;
+}
+
 #dateToComplete {
     border: none;
     background-color: #CC624E;

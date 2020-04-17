@@ -47,6 +47,10 @@
     margin-top: 30px;
 }
 
+#article--Title::placeholder {
+    color: #FFFFFF;
+}
+
 #article--Synopsis {
     border: none;
     background-color: #CC624E;
@@ -59,6 +63,10 @@
     margin-top: 20px;
 }
 
+#article--Synopsis::placeholder {
+    color: #FFFFFF;
+}
+
 #article--Url {
     margin-top: 20px;
     border: none;
@@ -69,4 +77,8 @@
     font-size: 40px;
     color: #FFFFFF;
     text-align: center;
+}
+
+#article--Url::placeholder {
+    color: #FFFFFF;
 }

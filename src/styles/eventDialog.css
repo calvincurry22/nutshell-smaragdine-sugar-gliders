@@ -48,6 +48,10 @@
     margin-top: 50px;
 }
 
+#eventTitle::placeholder {
+    color: #FFFFFF;
+}
+
 #eventDate {
     border: none;
     background-color: #CC624E;
@@ -70,4 +74,8 @@
     font-size: 40px;
     color: #FFFFFF;
     text-align: center;
+}
+
+#eventLocation::placeholder {
+    color: #FFFFFF;
 }
