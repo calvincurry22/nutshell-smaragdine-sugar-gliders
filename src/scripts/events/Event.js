@@ -2,7 +2,7 @@
 
 export const EventHTML = (event, isAFriendClass, userWhoWroteEvent, currentUserId) => {
     return `
-    <div class="event ${isAFriendClass === true ? 'italicized' : ''}">
+    <div class="event ${isAFriendClass === true ? 'friend' : ''}">
         <div class="eventTitleDeleteButtonWrapper">
             <div class="event__name">${event.event}</div>
             ${event.user === currentUserId ? `<button id="deleteEventBtn--${event.id}">x</button>`:""}

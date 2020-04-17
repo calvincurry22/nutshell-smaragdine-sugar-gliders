@@ -50,6 +50,9 @@ html {
     flex-wrap: wrap;
 }
 
-.italicized {
+.friend {
     font-style: italic;
+    background: cornsilk;
+    border: solid black;
+    color: black;
 }

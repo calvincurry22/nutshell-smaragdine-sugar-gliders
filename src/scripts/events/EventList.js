@@ -26,7 +26,14 @@ const render = () => {
             return usersCollection.find(user => user.id === friend.friendUserId)
         })
 
-        const eventHTML = events.map(event => {
+        let filteredEventsArray = events.filter(e => e.user === currentUserId)
+        friendsCollection.filter(f => f.userId === currentUserId).map(uf => {
+            events.filter(e => e.user === uf.friendUserId).forEach(fe => {
+                filteredEventsArray.push(fe)
+            })
+        })
+
+        const eventHTML = filteredEventsArray.map(event => {
             let isAFriendClass = false
             friends.map(friend => {
                 if (friend.id === event.user) {

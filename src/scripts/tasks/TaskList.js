@@ -41,7 +41,14 @@ const render = () => {
             return usersCollection.find(user => user.id === friend.friendUserId)
         })
 
-        contentTarget.innerHTML = tasks.map(individualTask => {
+        let filteredTasksArray = tasks.filter(t => t.userId === currentUserId)
+        friendsCollection.filter(f => f.userId === currentUserId).map(uf => {
+            tasks.filter(t => t.userId === uf.friendUserId).forEach(ft => {
+                filteredTasksArray.push(ft)
+            })
+        })
+
+        contentTarget.innerHTML = filteredTasksArray.map(individualTask => {
             let isAFriendClass = false
             friends.map(friend => {
                 if (friend.id === individualTask.userId) {
@@ -52,7 +59,7 @@ const render = () => {
             if(individualTask.complete !== true)
             {
                 return `
-                <section class="task ${isAFriendClass === true ? 'italicized' : ''}">
+                <section class="task ${isAFriendClass === true ? 'friend' : ''}">
                 ${
                         `
                         <div class="task__name" id="taskName--${individualTask.id}">${individualTask.task}</div>

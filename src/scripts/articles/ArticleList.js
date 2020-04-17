@@ -38,7 +38,14 @@ const renderArticles = () => {
             return allTheUsers.find(user => user.id === friend.friendUserId)
         })
 
-        const articleHTML = articleCollection.map(articleObj => {
+        let filteredArticlesArray = articleCollection.filter(a => a.userId === currentUserId)
+        allTheFriends.filter(f => f.userId === currentUserId).map(uf => {
+            articleCollection.filter(a => a.userId === uf.friendUserId).forEach(fa => {
+                filteredArticlesArray.push(fa)
+            })
+        })
+
+        const articleHTML = filteredArticlesArray.map(articleObj => {
             let isAFriendClass = false
             friends.map(friend => {
                 if (friend.id === articleObj.userId) {
