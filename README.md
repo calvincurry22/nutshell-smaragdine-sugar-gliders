@@ -5,7 +5,7 @@
 ## Pulling from gitHub
 1. Clone this repository on to your local machine
 1. `cd` into the directory it creates
-1. Make a `database.json` file in the `api` directory
+1. Make a `database.json` file in a new directory called `api`
 1. Open VS code and copy and paste the json template below into `database.json`
 ```
 {
