@@ -7,7 +7,7 @@
 import { getUsers, useUsers } from "../user/userProvider.js"
 import { AddFriendButton } from "./AddFriendButton.js"
 import { CloseFriendButton } from "./CloseFriendsButton.js"
-import { saveFriends } from "./FriendsProvider.js"
+import { saveFriends, useFriends, getFriends } from "./FriendsProvider.js"
 
 
 const eventHub = document.querySelector("#container");
@@ -15,8 +15,10 @@ const contentTarget = document.querySelector(".dialogContainer");
 
 const AddFriendForm = () => {
         const allTheUsers = useUsers();
-        const currentUserId = parseInt(sessionStorage.getItem('userId'))
-        const filteredArrayofUsers = allTheUsers.filter(user => user.id !== currentUserId)
+        const allThefriends = useFriends()
+        const currentUser = parseInt(sessionStorage.getItem('userId'))
+        let usersMinusCurrentUser = allTheUsers.filter(user => user.id !== currentUser)
+        
         contentTarget.innerHTML =`
             <dialog class="dialog" id="addFriendForm">
                 <fieldset>
@@ -24,8 +26,8 @@ const AddFriendForm = () => {
                         <select class="dropdown" id="friendDropdown">
                         <option value="0">Select a user</option>
                         ${
-                            filteredArrayofUsers.map(singleUser => {
-                            return `<option value="${singleUser.id}" class="selectOption">${singleUser.username}</option>`
+                            usersMinusCurrentUser.map(singleUser => {
+                                    return `<option value="${singleUser.id}" class="selectOption">${singleUser.username}</option>`
                             }).join("")
                         }
                         </select>
@@ -40,6 +42,7 @@ const AddFriendForm = () => {
 
 eventHub.addEventListener("addFriendButtonClicked", customEvent => {
     const selectElement = document.querySelector("#friendDropdown").value;
+
     if (selectElement !== "0") {
         const selectedFriendUserId = parseInt(document.querySelector("#friendDropdown").value);
         const currentUserId = parseInt(sessionStorage.getItem('userId'));
@@ -55,7 +58,11 @@ eventHub.addEventListener("addFriendButtonClicked", customEvent => {
 })
 
 eventHub.addEventListener("findFriendBtnClicked", customEvent => {
-    getUsers().then(() => {
+    const promise = Promise.all([
+        getUsers(),
+        getFriends()
+    ])
+    promise.then(() => {
         AddFriendForm()
         const dialogElement = document.querySelector("#addFriendForm")
         dialogElement.showModal()

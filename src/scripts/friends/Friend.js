@@ -1,3 +1,7 @@
+// Author: Calvin Curry 
+//This module is resposible for providing the HTML representation of each friend object.
+
+
 
 export const Friend = (friendArray) => {
     return `

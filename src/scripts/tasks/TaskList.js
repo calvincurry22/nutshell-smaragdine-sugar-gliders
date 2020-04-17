@@ -14,9 +14,10 @@ const eventHub = document.querySelector("#container")
 const contentTarget = document.querySelector(".userTasksContainer")
 
 eventHub.addEventListener("saveTaskButtonClicked", e=>{
+    const currentUserId = parseInt(sessionStorage.getItem("userId"))
     const newTask = {
         task: e.detail.task,
-        userId: 1,
+        userId: currentUserId,
         complete: e.detail.complete,
         dateToComplete: e.detail.dateToComplete
     }

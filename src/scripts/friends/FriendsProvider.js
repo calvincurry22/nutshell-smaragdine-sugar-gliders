@@ -1,3 +1,6 @@
+//Author: Calvin Curry 
+//This module is responsible for providing the friend user data. 
+
 import { dispatchStateChangeEvent } from "../AppController.js"
 
 
