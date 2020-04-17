@@ -20,7 +20,7 @@
 ## Running the App
 1. Open terminal
 1. First be sure you cd into the `src` directory of the app in your terminal
-1. Serve the data onto a local server port of your choice (ex. 
+1. Serve the data onto a local server port of your choice
 1. Open another terminal tab and `cd` to the api directory
 1. Serve json database using `json-server -p 8088 -w database.json`
 1. Open your browser and visit the server site used in Step 3
