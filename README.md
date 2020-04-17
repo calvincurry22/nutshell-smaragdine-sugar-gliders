@@ -17,7 +17,6 @@
   "messages": []
 }
 ```
-1. Delete the `.ignore` file in the `api` directory
 
 ## Running the App
 1. Open terminal
