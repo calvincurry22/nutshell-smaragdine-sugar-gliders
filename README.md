@@ -4,7 +4,15 @@
 
 1. Clone this repository
 1. `cd` into the directory it creates
-1. Make a `database.json` file in the `api` directory
+1. Make a `database.json` file in the `api` directory using this template json data:
+{
+  "users": [],
+  "articles": [],
+  "events": [],
+  "tasks": [],
+  "friends": [],
+  "messages": []
+}
 1. Delete the `.ignore` file in the `api` directory
 
 > **Note:** Your `database.json` file is already in the `.gitignore` file for this project, so it will never be added to the repo or pushed to Github.
