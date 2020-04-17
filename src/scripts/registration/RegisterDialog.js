@@ -62,16 +62,15 @@ eventHub.addEventListener("signUpButtonClicked", customEvent => {
             }
             addUser(newUser)
                 .then(validationFuntion)
-    
-                    
+
             const dialog = document.querySelector("#registrationForm");
             dialog.close();
         }
-        } else if (password !== passwordConfirmation) {
-            alert("Re-entered password does not match initial password.")
-        } else {
-            alert("Please fill out required fields")
-        }
+    } else if (password !== passwordConfirmation) {
+        alert("Re-entered password does not match initial password.")
+    } else {
+        alert("Please fill out required fields")
+    }
     })
 })
 
