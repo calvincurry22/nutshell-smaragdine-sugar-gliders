@@ -1,0 +1,72 @@
+.article__Dialog {
+    flex-basis: 15%;
+    background: #FCF4DB;
+    border: 22px solid #FFAA5C;
+    border-radius: 25px;
+    padding: 0px 15px;
+    height: 250px;
+    text-align: center;
+    color: #FFFFFF;
+}
+
+#button--SaveArticle {
+    margin-top: 5px;
+    border: none;
+    background: #FCF4DB;
+    color: #CC624E;
+    font-size: 25px;
+    margin-right: 10px;
+}
+
+#button--SaveArticle:hover {
+    text-decoration: underline;
+}
+
+#button--closeDialog {
+    margin-top: 5px;
+    border: none;
+    background: #FCF4DB;
+    color: #CC624E;
+    font-size: 25px;
+    margin-left: 10px;
+}
+
+#button--closeDialog:hover {
+    text-decoration: underline;
+}
+
+#article--Title {
+    border: none;
+    background-color: #CC624E;
+    height: 30px;
+    width: 80%;
+    font-weight: 900;
+    font-size: 40px;
+    color: #FFFFFF;
+    text-align: center;
+    margin-top: 30px;
+}
+
+#article--Synopsis {
+    border: none;
+    background-color: #CC624E;
+    height: 30px;
+    width: 80%;
+    font-weight: 900;
+    font-size: 40px;
+    color: #FFFFFF;
+    text-align: center;
+    margin-top: 20px;
+}
+
+#article--Url {
+    margin-top: 20px;
+    border: none;
+    background-color: #CC624E;
+    height: 30px;
+    width: 80%;
+    font-weight: 900;
+    font-size: 40px;
+    color: #FFFFFF;
+    text-align: center;
+}

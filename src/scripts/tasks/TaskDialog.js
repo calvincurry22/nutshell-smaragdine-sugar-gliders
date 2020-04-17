@@ -3,8 +3,8 @@ const contentTarget = document.querySelector(".dialogContainer")
 export const TaskDialog = () => {
     contentTarget.innerHTML = `
     <dialog id="taskDialog">
-        <input type="text" placeholder="task name" id="task">
-        <label for="dateToComplete">Date to complete</label>
+        <input type="text" onfocus="this.value=''" placeholder="Task Name" id="task"><br><br>
+        <label for="dateToComplete" id="dateToCompleteLabel">Date to complete</label>
         <input type="date" id="dateToComplete">
         <button id="saveTask">Save task</button>
         <button id="closeDialog">Close</button>

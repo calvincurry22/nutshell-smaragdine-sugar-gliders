@@ -11,12 +11,9 @@ export const ArticleDialog = () => {
     contentTarget.innerHTML = `
         <dialog class="article__Dialog">
             <form action="">
-                <label for="articleTitle">Title:</label><br>
-                <input type="text" id="article--Title" name="articleTitle"><br>
-                <label for="articleSynopsis">Enter a Synopsis:</label><br>
-                <input type="textarea" id="article--Synopsis" name="articleSynopsis"><br>
-                <label for="articleUrl">Enter URL:</label><br>
-                <input type="url" id="article--Url" name="articleUrl"><br><br>
+                <input type="text" id="article--Title" name="articleTitle" onfocus="this.value=''" placeholder="Enter a Title" required /><br>
+                <input type="textarea" id="article--Synopsis" name="articleSynopsis" onfocus="this.value=''" placeholder="Enter a Synopsis" required /><br>
+                <input type="url" id="article--Url" name="articleUrl" onfocus="this.value=''" placeholder="Enter URL" required /><br><br>
             </form>
             <button id="button--SaveArticle">Save Article</button>
             <button id="button--closeDialog">Close</button>

@@ -6,6 +6,10 @@
 @import 'register.css';
 @import 'task.css';
 @import 'event.css';
+@import 'articleDialog.css';
+@import 'eventDialog.css';
+@import 'taskDialog.css';
+@import 'friendDialog.css';
 
 *{
     font-family: 'Raleway', sans-serif;

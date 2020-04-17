@@ -5,19 +5,9 @@ const contentTarget = document.querySelector('.eventsContainer')
 const render = () => {
     return `
         <form class="eventForm">
-            <fieldset>
-                <label for="eventTitle">Event: </label>
-                <input type="text" id="eventTitle" name="eventTitle">
-            </fieldset>
-            <fieldset>
-                <label for="eventDate">Date: </label>
-                <input type="date" id="eventDate" name="eventDate">
-            </fieldset>
-            <fieldset>
-                <label for="eventLocation">Location: </label>
-                <input type="text" id="eventLocation" name="eventLocation">
-            </fieldset>
-
+            <input type="text" id="eventTitle" name="eventTitle" onfocus="this.value=''" placeholder="Event" />
+            <input type="date" id="eventDate" name="eventDate">
+            <input type="text" id="eventLocation" name="eventLocation"  onfocus="this.value=''" placeholder="Location" />
         </form>
         <button id="saveEvent">Save Event</button>
     `

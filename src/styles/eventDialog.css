@@ -1,0 +1,73 @@
+.eventDialog {
+    flex-basis: 15%;
+    background: #FCF4DB;
+    border: 22px solid #FFAA5C;
+    border-radius: 25px;
+    padding: 0px 15px;
+    height: 350px;
+    width: 650px;
+    text-align: center;
+    color: #FFFFFF;
+}
+
+#saveEvent {
+    margin-top: 5px;
+    border: none;
+    background: #FCF4DB;
+    color: #CC624E;
+    font-size: 35px;
+    margin-right: 25px;
+}
+
+#saveEvent:hover {
+    text-decoration: underline;
+}
+
+#closeDialog {
+    margin-top: 5px;
+    border: none;
+    background: #FCF4DB;
+    color: #CC624E;
+    font-size: 35px;
+    margin-left: 25px;
+}
+
+#closeDialog:hover {
+    text-decoration: underline;
+}
+
+#eventTitle {
+    border: none;
+    background-color: #CC624E;
+    height: 50px;
+    width: 80%;
+    font-weight: 900;
+    font-size: 40px;
+    color: #FFFFFF;
+    text-align: center;
+    margin-top: 50px;
+}
+
+#eventDate {
+    border: none;
+    background-color: #CC624E;
+    height: 50px;
+    width: 80%;
+    font-weight: 900;
+    font-size: 50px;
+    color: #FFFFFF;
+    text-align: center;
+    margin-top: 20px;
+}
+
+#eventLocation {
+    margin-top: 20px;
+    border: none;
+    background-color: #CC624E;
+    height: 50px;
+    width: 80%;
+    font-weight: 900;
+    font-size: 40px;
+    color: #FFFFFF;
+    text-align: center;
+}
