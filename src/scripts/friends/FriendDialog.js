@@ -19,12 +19,6 @@ const AddFriendForm = () => {
         const currentUser = parseInt(sessionStorage.getItem('userId'))
         let usersMinusCurrentUser = allTheUsers.filter(user => user.id !== currentUser)
         
-        const notFriends = usersMinusCurrentUser.filter(user => {
-            return (allThefriends.find(friend => friend.friendUserId === user.id)) ? false : true;
-        })
-        
-       
-    
         contentTarget.innerHTML =`
             <dialog class="dialog" id="addFriendForm">
                 <fieldset>
@@ -32,7 +26,7 @@ const AddFriendForm = () => {
                         <select class="dropdown" id="friendDropdown">
                         <option value="0">Select a user</option>
                         ${
-                            notFriends.map(singleUser => {
+                            usersMinusCurrentUser.map(singleUser => {
                                     return `<option value="${singleUser.id}" class="selectOption">${singleUser.username}</option>`
                             }).join("")
                         }
