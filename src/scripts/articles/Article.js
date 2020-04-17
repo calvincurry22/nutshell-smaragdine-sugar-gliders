@@ -4,7 +4,7 @@
 
 export const Article = (articleObject, isAFriendClass, userWhoWroteEvent, currentUserId) => {
     return `
-        <section class="article__Card ${isAFriendClass === true ? 'friend' : ''}">
+        <section class="article__Card ${isAFriendClass === true ? 'italicized' : ''}">
             <div class="article_imageContainer">
             <img class="article__image" src="../../styles/images/Article-Icon.svg">
             </div>

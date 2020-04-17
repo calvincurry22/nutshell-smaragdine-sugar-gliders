@@ -8,7 +8,8 @@ import { TaskDialog } from "./TaskDialog.js"
 const contentTarget = document.querySelector(".addTaskButtonContainers")
 
 export const Task = () => {
-    contentTarget.innerHTML = `<button id="showTaskButton">Add Task</button>`
+    contentTarget.innerHTML = `
+    <div class="task__titleContainer"><button id="showTaskButton">+Add Task</button><div class="task__title">To-Do List</div></div>`
 }
 
 contentTarget.addEventListener("click", e=>{

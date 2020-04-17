@@ -1,10 +1,11 @@
-import { getFriends, useFriends } from "./FriendsProvider.js"
+import { getFriends, useFriends, saveFriends } from "./FriendsProvider.js"
 import { useUsers, getUsers } from "../user/userProvider.js"
 import { Friend } from "./Friend.js"
 import { FriendDialogButton } from "./FriendDialogButton.js"
 import { deleteFriend } from "./FriendsProvider.js"
 
-
+// Author: Calvin Curry 
+// This module is responsible for Rendering data in the FriendList component when friends are added
 
 const contentTarget = document.querySelector(".friendsContainer")
 const eventHub = document.querySelector("#container")
@@ -28,7 +29,8 @@ const render = () => {
         contentTarget.innerHTML = `
         <div class="friend__title">Friends</div>
         ${FriendDialogButton()}
-        ${Friend(friends)}`
+        ${Friend(friends)}
+        `
 
     })
 }
@@ -51,4 +53,40 @@ contentTarget.addEventListener("click", clickEvent => {
 
 eventHub.addEventListener("componentStateChanged", e => {
     FriendList()
+})
+
+
+eventHub.addEventListener("chatNameClicked", customEvent => {
+    const promise = Promise.all([
+        getUsers(),
+        getFriends()
+    ])
+    promise.then( () => {
+        const usersArray = useUsers()
+        const friendsArray = useFriends()
+        const currentUser = parseInt(sessionStorage.getItem('userId'))
+
+        const userFriends = friendsArray.filter(friend => friend.userId === currentUser)
+        const foundUser = usersArray.find(user => user.id === parseInt(customEvent.detail.chatUserId))
+        const test = userFriends.find(friend => friend.friendUserId === foundUser.id)
+
+        const userCheck = () => {
+            if(test !== undefined) {
+                alert("User is already a Friend")
+            } else if(foundUser.id === currentUser) {
+                return false
+            }
+            else {
+                const confirmation = confirm(`Add ${foundUser.username} as a friend? Click OK to confirm`)
+                            if(confirmation) {
+                                let newFriendObject = {
+                                    userId: currentUser,
+                                    friendUserId: foundUser.id
+                                }
+                                saveFriends(newFriendObject)
+                            }
+            }
+        }
+        userCheck()
+    })
 })

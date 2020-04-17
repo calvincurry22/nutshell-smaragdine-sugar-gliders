@@ -1,0 +1,99 @@
+.tasksContainer {
+    flex-basis: 100%;
+    background: #FCF4DB;
+    border: 22px solid #FFAA5C;
+    border-radius: 25px;
+    margin-bottom: 15px;    
+    height: 20vh;
+    overflow: scroll;
+}
+
+
+.task__titleContainer {
+    font-weight: 900;
+    font-size: 36px;
+    color: #CC624E;
+    flex-basis: 100%;
+    display: flex;
+    height: fit-content;
+}
+
+.task__title {
+    flex-basis: 80%;
+    padding-left: 16%;
+}
+
+#showTaskButton {
+    flex-basis: 20%;
+    border: none;
+    background: #FCF4DB;
+    color: #CC624E;
+    font-size: 14px;
+    justify-self: left;
+}
+
+#showTaskButton:hover {
+    text-decoration: underline;
+}
+
+.userTasksContainer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+
+.task {
+    background: #67889D;
+    background-image: linear-gradient(180deg, rgba(255,255,255,0.50) 0%, rgba(255,255,255,0.50) 100%);
+    color: #ffffff;
+    border-radius: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    overflow-x: hidden;
+    flex-basis: 45%;
+    margin: 10px 10px;
+}
+
+.task__name {
+    flex-basis: 100%;
+    font-weight: 800;
+    font-size: 24px;
+    color: #FFFFFF;
+    margin-left: 15px;
+}
+
+.task__textImage {
+    flex-basis: 100%;
+    display: flex;
+}
+
+.task__image {
+    flex-basis: 15%;
+    margin: 0px 10px;
+    align-self: center;
+}
+
+.task__buttons {
+    flex-basis: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+[id^=deleteTaskButtonClicked--] {
+    border: 1px solid #CC624E;
+    border-radius: 5px;
+    margin-right: 15px;
+    background: #67889D;
+    background-image: linear-gradient(180deg, rgba(255,255,255,0.50) 0%, rgba(255,255,255,0.50) 100%);
+    color: #ffffff;
+    font-weight: 500;
+    margin-bottom: 5px;
+}
+
+[id^=deleteTaskButtonClicked--]:hover {
+    background: #CC624E;
+}
+
+.task__check {
+    margin-left: 10px;
+}

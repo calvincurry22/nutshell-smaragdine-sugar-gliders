@@ -4,6 +4,8 @@
 @import 'friend.css';
 @import 'message.css';
 @import 'register.css';
+@import 'task.css';
+@import 'event.css';
 
 *{
     font-family: 'Raleway', sans-serif;
@@ -44,29 +46,6 @@ html {
     flex-wrap: wrap;
 }
 
-.eventsContainer {
-    flex-basis: 100%;
-    background: #FCF4DB;
-    border: 22px solid #FFAA5C;
-    border-radius: 25px;
-    margin: 20px 0 10px 0;
-    height: 20vh;
-    overflow: scroll;
-}
-
-.tasksContainer {
-    flex-basis: 100%;
-    background: #FCF4DB;
-    border: 22px solid #FFAA5C;
-    border-radius: 25px;
-    margin-bottom: 15px;    
-    height: 20vh;
-    overflow: scroll;
-}
-
-.friend {
+.italicized {
     font-style: italic;
-    background: cornsilk;
-    border: solid black;
-    color: black;
 }

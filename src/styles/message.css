@@ -74,7 +74,9 @@
 [id^=deleteMessageBtn--]:hover {
     background: #CC624E;
 }
-
+.message__user {
+    color: #CC624E
+}
 
 /* don't look at me */
 
