@@ -3,6 +3,7 @@
 @import 'login.css';
 @import 'friend.css';
 @import 'message.css';
+@import 'register.css';
 @import 'task.css';
 @import 'event.css';
 
@@ -46,5 +47,5 @@ html {
 }
 
 .italicized {
-    font-style: italic
+    font-style: italic;
 }
