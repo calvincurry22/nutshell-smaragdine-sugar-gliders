@@ -7,14 +7,15 @@
 1. `cd` into the directory it creates
 1. Make a `database.json` file in the `api` directory
 1. Open VS code and copy and paste the json template below into `database.json`
-`{
+``{
   "users": [],
   "articles": [],
   "events": [],
   "tasks": [],
   "friends": [],
   "messages": []
-}`
+}
+``
 1. Delete the `.ignore` file in the `api` directory
 
 ## Running the App
